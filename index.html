@@ -57,6 +57,8 @@
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
 	        
+				<li><a href="/tags/AI/">人工智能</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -78,6 +80,10 @@
 			<div class="social">
 				
 					<a class="weibo" target="_blank" href="http://weibo.com/MrMofu/" title="weibo"><i class="icon-weibo"></i></a>
+		        
+					<a class="qq" target="_blank" href="/857251941" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/u/97d71548f611" title="jianshu"><i class="icon-jianshu"></i></a>
 		        
 					<a class="bilibili" target="_blank" href="http://space.bilibili.com/3769932" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
@@ -111,12 +117,18 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
 						<a class="weibo" target="_blank" href="http://weibo.com/MrMofu/" title="weibo"><i class="icon-weibo"></i></a>
+			        
+						<a class="qq" target="_blank" href="/857251941" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/u/97d71548f611" title="jianshu"><i class="icon-jianshu"></i></a>
 			        
 						<a class="bilibili" target="_blank" href="http://space.bilibili.com/3769932" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
@@ -126,12 +138,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags/AI/">人工智能</a></li>
 		        
 				</ul>
 			</nav>
@@ -148,27 +162,67 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-firstpost" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java-GUI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/29/firstpost/">firstpost</a>
+      <a class="article-title" href="/2017/10/31/Java-GUI/">Java GUI</a>
     </h1>
   
 
         
-        <a href="/2017/10/29/firstpost/" class="archive-article-date">
-  	<time datetime="2017-10-29T03:30:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-29</time>
+        <a href="/2017/10/31/Java-GUI/" class="archive-article-date">
+  	<time datetime="2017-10-31T08:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这是一篇测试文章</p>
+        <p>Author：MWhite<br>Update time：17.10.31</p>
+<h2 id="AWT"><a href="#AWT" class="headerlink" title="AWT"></a>AWT</h2><ul>
+<li>Swing组件组合界面 </li>
+<li>AWT进行事件响应和处理</li>
+<li>AWT的布局管理器完成组件的布局</li>
+</ul>
+<h6 id="注意区分组件名称："><a href="#注意区分组件名称：" class="headerlink" title="注意区分组件名称："></a>注意区分组件名称：</h6><ul>
+<li>AWT: Frame, Button, Panel, … </li>
+<li>Swing: JFrame, Jbutton, Jpanel, … </li>
+</ul>
+<blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-1538af9995ea5738.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="AWT+SWING" title="AWT+SWING"></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">案例</div><div class="line">import javax.swing.JFrame; </div><div class="line">public class Simple2 &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        JFrame frame = new JFrame(“Hello World &quot;);   </div><div class="line">        frame.setSize(300, 200);   </div><div class="line">        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); </div><div class="line">        JPanel panel = new JPanel(); //</div><div class="line">        panel.setBackground(Color.red);</div><div class="line">        frame.setContentPane(panel);   </div><div class="line">        frame.setVisible(true);  </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><ul>
+<li><h5 id="顶层组件"><a href="#顶层组件" class="headerlink" title="顶层组件"></a>顶层组件</h5>包括 JFrame、JDialog、Japplet、 JWindow<br>JFrame是大多数应用程序的基本窗口，有边框、标题和按钮，允许程序员把其他组件添 加到它里面，把它们组织起来，并把它们呈现给用户。 </li>
+<li><h5 id="中间组件-二级容器"><a href="#中间组件-二级容器" class="headerlink" title="中间组件 - 二级容器"></a>中间组件 - 二级容器</h5><p>必须放在顶层容器内，且能够容纳其他控件<br>包括JPanel、JScrollPane、JToolBar、JSplitPane、JTabbedPane </p>
+<blockquote>
+<ul>
+<li>JPanel：常规面板</li>
+<li>JScrollPane：滚动面板，即带有长宽滚动条，主要用来容纳大型控件</li>
+<li>JToolBar：工具栏面板，包含图标按钮</li>
+<li>JSplitPane：分割式面板</li>
+<li>JTabbedPane：选项卡面板</li>
+</ul>
+</blockquote>
+</li>
+<li><h5 id="基本组件"><a href="#基本组件" class="headerlink" title="基本组件"></a>基本组件</h5><blockquote>
+<ul>
+<li><strong>按钮</strong>：JButton（常规按钮）、JCheckBox（复选框）、JRadioButton（单选按钮）。 </li>
+<li><strong>文本组件</strong>：JTextField（文本字段）、JPasswoordField（密码框）、JTextArea（纯文本）。 <ul>
+<li><strong>不可编辑显示组件</strong>：JLabel（显示不可编辑文本）、JToolTip（显示不可编辑文本）、 JProgreesBar（进度条）。 </li>
+</ul>
+</li>
+<li><strong>菜单</strong>：JMenu（普通菜单）、JPopupMenu（弹出式菜单）。 </li>
+<li><strong>其他组件</strong>：JFileChooser（文件选择器）、JColorChooser（颜色选择器）、JTable（表 格）、JTree（树）、JComboBox（下拉框）等等。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
 
       
 
@@ -177,11 +231,26 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/29/firstpost/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/10/31/Java-GUI/">展开全文 >></a>
         </p>
       
 
@@ -211,35 +280,39 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Neural-Networks-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/29/hello-world/">Hello World</a>
+      <a class="article-title" href="/2017/10/31/Neural-Networks-2/">Neural Networks(2)</a>
     </h1>
   
 
         
-        <a href="/2017/10/29/hello-world/" class="archive-article-date">
-  	<time datetime="2017-10-29T02:08:52.886Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-29</time>
+        <a href="/2017/10/31/Neural-Networks-2/" class="archive-article-date">
+  	<time datetime="2017-10-31T07:59:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h1 id="Neural-Networks-2-Gradient-descent-amp-computation-Graph"><a href="#Neural-Networks-2-Gradient-descent-amp-computation-Graph" class="headerlink" title="Neural Networks(2)-Gradient descent&amp;computation Graph"></a>Neural Networks(2)-Gradient descent&amp;computation Graph</h1><h6 id="7-10-30-MWhite’s-learning-notes"><a href="#7-10-30-MWhite’s-learning-notes" class="headerlink" title="7/10/30 MWhite’s learning notes"></a>7/10/30 MWhite’s learning notes</h6><h1 id="Recap"><a href="#Recap" class="headerlink" title="Recap"></a>Recap</h1><blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-ebe7ab2e35107e38.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM截图20171030220137.jpg"></p>
+</blockquote>
+<h1 id="Gradient-descent-algorithm"><a href="#Gradient-descent-algorithm" class="headerlink" title="Gradient descent algorithm"></a>Gradient descent algorithm</h1><blockquote>
+<p>want to find w&amp;b that minimize J(w,b)</p>
+<p>w:=w-a*dJ(w,b)/dw<br>(a-learning rate)</p>
+</blockquote>
+<h1 id="Derivate-amp-calculus"><a href="#Derivate-amp-calculus" class="headerlink" title="Derivate&amp;calculus"></a>Derivate&amp;calculus</h1><blockquote>
+<p>Skip</p>
+</blockquote>
+<h1 id="Computation-Graph"><a href="#Computation-Graph" class="headerlink" title="Computation Graph"></a>Computation Graph</h1><blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-752dfc34e110208a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM截图20171030225155.jpg"><br> <img src="http://upload-images.jianshu.io/upload_images/3775272-02d2ec076bd8283a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM截图20171030230314.jpg"></p>
+</blockquote>
 
       
 
@@ -248,11 +321,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/29/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/10/31/Neural-Networks-2/">展开全文 >></a>
         </p>
       
 
@@ -313,7 +397,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -373,6 +457,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -423,27 +519,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="http://hp.jishuzaxuepu.group/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>互评网站</a>
             </li>
           
         </ul>
