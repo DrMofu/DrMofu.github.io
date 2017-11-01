@@ -6,24 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Neural Networks(2) descent&amp;computation Graph | M小白博客</title>
+  <title>Machine Learning 2 | M小白博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="17/10/30 MWhite’s learning notesRecap Gradient descent algorithm want to find w&amp;amp;b that minimize J(w,b) w:=w-a*dJ(w,b)/dw(a-learning rate)  Derivate&amp;amp;calculus Skip  Computation Graph">
+  <meta name="description" content="17/11/01 MWhite’s learning notesMultiple Features Gradient Descent for Multiple Variables Skill Where μi is the average of all the values for feature (i) and si is the range of values (max - min), or">
 <meta name="keywords" content="AI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Neural Networks(2) descent&amp;computation Graph">
-<meta property="og:url" content="http://yoursite.com/2017/10/31/Neural-Networks-2/index.html">
+<meta property="og:title" content="Machine Learning 2">
+<meta property="og:url" content="http://yoursite.com/2017/11/01/Machine-Learning-2/index.html">
 <meta property="og:site_name" content="M小白博客">
-<meta property="og:description" content="17/10/30 MWhite’s learning notesRecap Gradient descent algorithm want to find w&amp;amp;b that minimize J(w,b) w:=w-a*dJ(w,b)/dw(a-learning rate)  Derivate&amp;amp;calculus Skip  Computation Graph">
+<meta property="og:description" content="17/11/01 MWhite’s learning notesMultiple Features Gradient Descent for Multiple Variables Skill Where μi is the average of all the values for feature (i) and si is the range of values (max - min), or">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-ebe7ab2e35107e38.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-752dfc34e110208a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-02d2ec076bd8283a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-10-31T10:07:26.182Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-72767488ec3f7db8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-24a6507c7bf3b03c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-80243c0161b12c96.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-7568eec00aca5b12.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-98f7c1ee085d0705.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-68016bcfaee64494.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-16d52db3d036d9f6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-29248ea612682839.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-11-01T15:15:28.732Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Neural Networks(2) descent&amp;computation Graph">
-<meta name="twitter:description" content="17/10/30 MWhite’s learning notesRecap Gradient descent algorithm want to find w&amp;amp;b that minimize J(w,b) w:=w-a*dJ(w,b)/dw(a-learning rate)  Derivate&amp;amp;calculus Skip  Computation Graph">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3775272-ebe7ab2e35107e38.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="Machine Learning 2">
+<meta name="twitter:description" content="17/11/01 MWhite’s learning notesMultiple Features Gradient Descent for Multiple Variables Skill Where μi is the average of all the values for feature (i) and si is the range of values (max - min), or">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3775272-72767488ec3f7db8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="M小白博客" type="application/atom+xml">
   
@@ -165,36 +170,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Neural-Networks-2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Machine-Learning-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Neural Networks(2) descent&amp;computation Graph
+      Machine Learning 2
     </h1>
   
 
         
-        <a href="/2017/10/31/Neural-Networks-2/" class="archive-article-date">
-  	<time datetime="2017-10-31T07:59:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
+        <a href="/2017/11/01/Machine-Learning-2/" class="archive-article-date">
+  	<time datetime="2017-11-01T15:15:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h6 id="17-10-30-MWhite’s-learning-notes"><a href="#17-10-30-MWhite’s-learning-notes" class="headerlink" title="17/10/30 MWhite’s learning notes"></a>17/10/30 MWhite’s learning notes</h6><h1 id="Recap"><a href="#Recap" class="headerlink" title="Recap"></a>Recap</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-ebe7ab2e35107e38.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="Gradient-descent-algorithm"><a href="#Gradient-descent-algorithm" class="headerlink" title="Gradient descent algorithm"></a>Gradient descent algorithm</h1><blockquote>
-<p>want to find w&amp;b that minimize J(w,b)</p>
-<p>w:=w-a*dJ(w,b)/dw<br>(a-learning rate)</p>
-</blockquote>
-<h1 id="Derivate-amp-calculus"><a href="#Derivate-amp-calculus" class="headerlink" title="Derivate&amp;calculus"></a>Derivate&amp;calculus</h1><blockquote>
-<p>Skip</p>
-</blockquote>
-<h1 id="Computation-Graph"><a href="#Computation-Graph" class="headerlink" title="Computation Graph"></a>Computation Graph</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-752dfc34e110208a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-02d2ec076bd8283a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+        <h6 id="17-11-01-MWhite’s-learning-notes"><a href="#17-11-01-MWhite’s-learning-notes" class="headerlink" title="17/11/01 MWhite’s learning notes"></a>17/11/01 MWhite’s learning notes</h6><h1 id="Multiple-Features"><a href="#Multiple-Features" class="headerlink" title="Multiple Features"></a>Multiple Features</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-72767488ec3f7db8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-24a6507c7bf3b03c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-80243c0161b12c96.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="Gradient-Descent-for-Multiple-Variables"><a href="#Gradient-Descent-for-Multiple-Variables" class="headerlink" title="Gradient Descent for Multiple Variables"></a>Gradient Descent for Multiple Variables</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-7568eec00aca5b12.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="Skill"><a href="#Skill" class="headerlink" title="Skill"></a>Skill</h5><ul>
+<li><img src="http://upload-images.jianshu.io/upload_images/3775272-98f7c1ee085d0705.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Where μi is the average of all the values for feature (i) and si is the range of values (max - min), or si is the standard deviation.</li>
+<li>Choose  appropriate learning rate<br><img src="http://upload-images.jianshu.io/upload_images/3775272-68016bcfaee64494.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<h1 id="Normal-Equation"><a href="#Normal-Equation" class="headerlink" title="Normal Equation"></a>Normal Equation</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-16d52db3d036d9f6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-29248ea612682839.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
       
 
@@ -295,7 +297,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/31/Neural-Networks-2/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/01/Machine-Learning-2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -309,15 +311,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/31/Java-GUI/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java GUI
-        
-      </div>
-    </a>
   
+    <a href="/2017/11/01/Matlab学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Matlab学习笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -342,7 +340,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#17-10-30-MWhite’s-learning-notes"><span class="toc-number">1.</span> <span class="toc-text">17/10/30 MWhite’s learning notes</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Recap"><span class="toc-number"></span> <span class="toc-text">Recap</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Gradient-descent-algorithm"><span class="toc-number"></span> <span class="toc-text">Gradient descent algorithm</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Derivate-amp-calculus"><span class="toc-number"></span> <span class="toc-text">Derivate&calculus</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Computation-Graph"><span class="toc-number"></span> <span class="toc-text">Computation Graph</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#17-11-01-MWhite’s-learning-notes"><span class="toc-number">1.</span> <span class="toc-text">17/11/01 MWhite’s learning notes</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Multiple-Features"><span class="toc-number"></span> <span class="toc-text">Multiple Features</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Gradient-Descent-for-Multiple-Variables"><span class="toc-number"></span> <span class="toc-text">Gradient Descent for Multiple Variables</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Skill"><span class="toc-number"></span> <span class="toc-text">Skill</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Normal-Equation"><span class="toc-number"></span> <span class="toc-text">Normal Equation</span></a>
                     </div>
                 </span>
             </div>
@@ -358,7 +356,7 @@
   
 
   
-  <div id="SOHUCS" sid="Neural-Networks-2" ></div> 
+  <div id="SOHUCS" sid="Machine-Learning-2" ></div> 
 <script type="text/javascript"> 
 window.YiliaChangyanWrap = function() {
     var appid = "cytih0qqU"; 
