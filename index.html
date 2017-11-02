@@ -5,12 +5,12 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="https://drmofu.github.io">
   <title>M小白博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="M小白博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://drmofu.github.io/index.html">
 <meta property="og:site_name" content="M小白博客">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
@@ -54,6 +54,8 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/极客/">极客</a></li>
 	        
 				<li><a href="/tags/学习笔记/">学习笔记</a></li>
 	        
@@ -117,6 +119,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -137,11 +141,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/学习笔记/">学习笔记</a></li>
+					<li style="width: 25%"><a href="/tags/极客/">极客</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/AI/">人工智能</a></li>
+					<li style="width: 25%"><a href="/tags/学习笔记/">学习笔记</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/AI/">人工智能</a></li>
 		        
 				</ul>
 			</nav>
@@ -179,7 +185,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Author：MWhite<br>Update time：17.11.02</p>
-<p>Octave与Matlab有相通之处<br><a href="https://drmofu.github.io/2017/11/01/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank" rel="external">Matlab学习笔记</a><br>本笔记只会记录特殊和值得写下的案例</p>
+<p>Octave与Matlab有相通之处<br><a href="https://drmofu.github.io/2017/11/01/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Matlab学习笔记</a><br>本笔记只会记录特殊和值得写下的案例</p>
 <h1 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h1><p>==是否等于<br>~=不等于<br>xor(甲,乙) 异或<br>% 注释符号<br>A.<em>B 二者规模相通，A与B的元素单纯相乘<br>A .^2 ;.点代表每一个元素<br>log() exp() abs() magic() eye() find() prod() sum() pinv() disp()<br><em>*很多函数都可以输入一个参数或者输入两个参数，第二个参数是1或2时，1代表row，2代表column</em></em><br>floor() % 去小数<br>ceil() %去小数，有小数取+1<br>v=v+ones(length(v),1) % v=v+1<br>a=a+ones(size(a,1),size(a,2))<br>(A’)’ %转置两次<br>max(矩阵) %求每一column的最大值<br>max(矩阵甲，矩阵乙) %选择大的<br>矩阵&lt;数值 %返回同样规格矩阵，成立的地方为1，不成立为0</p>
 <h1 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h1><p>a = 3 %赋值并显示a的值<br>a = 3; %用;后不显示a的值，只赋值<br>字符串用 ‘ ‘括起来<br>sprintf()函数类比C语言中的printf()函数<br>[a,b]=max(c) %如果右边可以赋予两个值的话，依次赋给a和b</p>
 <p>format long<br>format short<br>和Matlab类似，改变显示数字的精度</p>
@@ -271,7 +277,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/02/Geek-Git中使用ssh/">极客——Git中使用SSH</a>
+      <a class="article-title" href="/2017/11/02/Geek-Git中使用ssh/">Git中使用SSH</a>
     </h1>
   
 
@@ -434,559 +440,10 @@
 
 
   
-    <article id="post-Machine-Learning-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/01/Machine-Learning-2/">Machine Learning Week 2</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/01/Machine-Learning-2/" class="archive-article-date">
-  	<time datetime="2017-11-01T15:15:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="17-11-01-MWhite’s-learning-notes"><a href="#17-11-01-MWhite’s-learning-notes" class="headerlink" title="17/11/01 MWhite’s learning notes"></a>17/11/01 MWhite’s learning notes</h6><h1 id="Multiple-Features"><a href="#Multiple-Features" class="headerlink" title="Multiple Features"></a>Multiple Features</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-72767488ec3f7db8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-24a6507c7bf3b03c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-80243c0161b12c96.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="Gradient-Descent-for-Multiple-Variables"><a href="#Gradient-Descent-for-Multiple-Variables" class="headerlink" title="Gradient Descent for Multiple Variables"></a>Gradient Descent for Multiple Variables</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-7568eec00aca5b12.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h5 id="Skill"><a href="#Skill" class="headerlink" title="Skill"></a>Skill</h5><ul>
-<li><img src="http://upload-images.jianshu.io/upload_images/3775272-98f7c1ee085d0705.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Where μi is the average of all the values for feature (i) and si is the range of values (max - min), or si is the standard deviation.</li>
-<li>Choose  appropriate learning rate<br><img src="http://upload-images.jianshu.io/upload_images/3775272-68016bcfaee64494.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-<h1 id="Normal-Equation"><a href="#Normal-Equation" class="headerlink" title="Normal Equation"></a>Normal Equation</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-16d52db3d036d9f6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-29248ea612682839.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/01/Machine-Learning-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Matlab学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/01/Matlab学习笔记/">Matlab学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/01/Matlab学习笔记/" class="archive-article-date">
-  	<time datetime="2017-11-01T09:27:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Author：MWhite<br>Update time：17.11.01<br><a href="https://cn.mathworks.com/help/matlab/getting-started-with-matlab.html" target="_blank" rel="external">Matlabg官方地址</a><br><a href="https://drmofu.github.io/2017/11/02/Octave-学习笔记/" target="_blank" rel="external">Octave学习笔记</a></p>
-<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>a = [1 2 3; 4 5 6; 7 8 10]<br>a’ 转置<br>p = inv(a) 反转<br>p = a.*a 执行元素级运算<br>a.^3<br>A = [a,a] 串联<br>A = [a; a] 并联<br>c = [3+4i, 4+3j; -i, 10j]</p>
-<p><strong>索引 start:end</strong><br>A(4,2)<br>A(1:3,2)<br>A(3,:)</p>
-<h1 id="工作区变量"><a href="#工作区变量" class="headerlink" title="工作区变量"></a>工作区变量</h1><p>退出 MATLAB 后，工作区变量不会保留。使用 save 命令保存数据以供将来使用<br>save myfile.mat<br>load myfile.mat</p>
-<h1 id="文本和字符"><a href="#文本和字符" class="headerlink" title="文本和字符"></a>文本和字符</h1><p><strong>如果文本包含单引号，请在定义中使用两个单引号</strong><br>otherText = ‘You’’re right’<br><strong>串联字符</strong><br>longText = [myText,’ - ‘,otherText]<br><strong>数字转字符 num2str()</strong><br>tempText = [‘Temperature is ‘,num2str(c),’C’]</p>
-<h1 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h1><p>A = [1 3 5];<br>max(A)<br><strong>赋值如果存在多个输出参数，请将其括在方括号中</strong><br>[maxA,location] = max(A)<br><strong>将任何字符输入括在单引号中</strong><br>disp(‘hello world’)</p>
-<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>whos myText 查看<br>clc 函数清除命令行窗口。</p>
-<h1 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h1><p>x = 0:pi/100:2*pi;<br>y = sin(x);<br>xlabel(‘x’)<br>ylabel(‘sin(x)’)<br>title(‘Plot of the Sine Function’)<br>hold on<br>plot(x,y,’r–’)<br><img src="http://upload-images.jianshu.io/upload_images/3775272-ff42a536736673b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="三维图像"><a href="#三维图像" class="headerlink" title="三维图像"></a>三维图像</h1><p>要计算 z，请首先使用 meshgrid 在此函数的域中创建一组 (x,y) 点。<br>[X,Y] = meshgrid(-2:.2:2);<br>Z = X .* exp(-X.^2 - Y.^2);<br>surf(X,Y,Z)</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-d27a0c37722c7dbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>绘制多图<br>subplot 的前两个输入表示每行和每列中的绘图数。第三个输入指定绘图是否处于活动状态。例如，在图窗口的 2×2 网格中创建四个绘图。<br>t = 0:pi/10:2<em>pi;<br>[X,Y,Z] = cylinder(4</em>cos(t));<br>subplot(2,2,1); mesh(X); title(‘X’);<br>subplot(2,2,2); mesh(Y); title(‘Y’);<br>subplot(2,2,3); mesh(Z); title(‘Z’);<br>subplot(2,2,4); mesh(X,Y,Z); title(‘X,Y,Z’);</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-7d0f217c47a759ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Matlab</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/01/Matlab学习笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Machine-Learning-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/01/Machine-Learning-1/">Machine Learning Week 1</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/01/Machine-Learning-1/" class="archive-article-date">
-  	<time datetime="2017-11-01T02:01:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="17-10-31-MWhite’s-learning-notes"><a href="#17-10-31-MWhite’s-learning-notes" class="headerlink" title="17/10/31 MWhite’s learning notes"></a>17/10/31 MWhite’s learning notes</h6><p>Supervised Learning &amp; Unsupervised Learning<br>Regression &amp; Classification</p>
-<h1 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h1><blockquote>
-<p>In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output.</p>
-<p>Supervised learning problems are categorized into <strong>“regression”</strong> and <strong>“classification”</strong> problems. In a regression problem, we are trying to predict results within a continuous output, meaning that we are trying to map input variables to some continuous function. In a classification problem, we are instead trying to predict results in a discrete output. In other words, we are trying to map input variables into discrete categories.</p>
-</blockquote>
-<h1 id="Unsupervised-Learning"><a href="#Unsupervised-Learning" class="headerlink" title="Unsupervised Learning"></a>Unsupervised Learning</h1><blockquote>
-<p>Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don’t necessarily know the effect of the variables.</p>
-<p>We can derive this structure by clustering the data based on relationships among the variables in the data.</p>
-<p>With unsupervised learning there is no feedback based on the prediction results.</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-6b46360349ab410f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="Cost-function"><a href="#Cost-function" class="headerlink" title="Cost function"></a>Cost function</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-64df788fa041e79c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Cost function"></p>
-<h3 id="The-relationship-between-hypothesis-function-and-cost-function"><a href="#The-relationship-between-hypothesis-function-and-cost-function" class="headerlink" title="The relationship between hypothesis function and cost function"></a>The relationship between hypothesis function and cost function</h3><p>we should try to minimize the cost function.<br><img src="http://upload-images.jianshu.io/upload_images/3775272-f0009553f6cc7c8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-5591cc5f6898fab9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>Two dimension</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-f956d5d67f5e5779.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="Gradient-descent"><a href="#Gradient-descent" class="headerlink" title="Gradient descent"></a>Gradient descent</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-916a4cecda956bbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Gradient descent is a kid of algorithms.<br><img src="http://upload-images.jianshu.io/upload_images/3775272-30bab3bd686c3c6f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="way"><br>And do remember update the parameters at the same time. (Simultaneously)</p>
-<p>alpha is learning rate (not too small, not too large)</p>
-<h3 id="Gradient-Descent-For-Linear-Regression"><a href="#Gradient-Descent-For-Linear-Regression" class="headerlink" title="Gradient Descent For Linear Regression"></a>Gradient Descent For Linear Regression</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-f9c5929045e3d032.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>The point of all this is that if we start with a guess for our hypothesis and then repeatedly apply these gradient descent equations, our hypothesis will become more and more accurate.</p>
-<h1 id="Matrices-and-Vectors"><a href="#Matrices-and-Vectors" class="headerlink" title="Matrices and Vectors"></a>Matrices and Vectors</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-71c5e68eab42044b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-d13d95f4b6d89553.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-e04049b50700d3e6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-d1e4b03ff2e4b268.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-7a63c8e6970837d9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-b4cb0ada9565b978.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Matrices are not commutative: A∗B≠B∗A<br>Matrices are associative: (A∗B)∗C=A∗(B∗C)<br><strong>identity matrix</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-4804aa0c06fa6175.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>inverse</strong> pinv(A)<br><strong>transposition</strong> AT</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/01/Machine-Learning-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Neural-Network-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/31/Neural-Network-1/">Neural Network(1) logistic regression</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/31/Neural-Network-1/" class="archive-article-date">
-  	<time datetime="2017-10-31T09:12:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="17-10-29-MWhite’s-learning-notes"><a href="#17-10-29-MWhite’s-learning-notes" class="headerlink" title="17/10/29 MWhite’s learning notes"></a>17/10/29 MWhite’s learning notes</h6><h1 id="Binary-Classification"><a href="#Binary-Classification" class="headerlink" title="Binary Classification"></a>Binary Classification</h1><p>Logistic regression is a kind of binary classification. In binary classification, the answer y is equal to 0 or 1.</p>
-<h1 id="Sigmoid-function"><a href="#Sigmoid-function" class="headerlink" title="Sigmoid function"></a>Sigmoid function</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-fa69c1ed9d87670d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Sigmoid gfnction"><br><img src="http://upload-images.jianshu.io/upload_images/3775272-398f5a456fd056fb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Sigmoid function"></p>
-<h1 id="Loss-error-function"><a href="#Loss-error-function" class="headerlink" title="Loss (error) function"></a>Loss (error) function</h1><p>For a scalar parameter θ, a decision function whose output is an estimate of θ, and a quadratic loss function.<br><img src="http://upload-images.jianshu.io/upload_images/3775272-bac37d794e40f26f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Loss function"></p>
-<h1 id="Cost-function"><a href="#Cost-function" class="headerlink" title="Cost function"></a>Cost function</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-bc2bf9ce66b4aee2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Loss function"><br>The average of loss function</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/31/Neural-Network-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java-GUI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/31/Java-GUI/">Java GUI</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/31/Java-GUI/" class="archive-article-date">
-  	<time datetime="2017-10-31T08:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Author：MWhite<br>Update time：17.10.31</p>
-<h2 id="AWT"><a href="#AWT" class="headerlink" title="AWT"></a>AWT</h2><ul>
-<li>Swing组件组合界面 </li>
-<li>AWT进行事件响应和处理</li>
-<li>AWT的布局管理器完成组件的布局</li>
-</ul>
-<h5 id="注意区分组件名称："><a href="#注意区分组件名称：" class="headerlink" title="注意区分组件名称："></a>注意区分组件名称：</h5><ul>
-<li>AWT: Frame, Button, Panel, … </li>
-<li>Swing: JFrame, Jbutton, Jpanel, … </li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-1538af9995ea5738.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="AWT+SWING" title="AWT+SWING"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">案例</div><div class="line">import javax.swing.JFrame; </div><div class="line">public class Simple2 &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        JFrame frame = new JFrame(“Hello World &quot;);   </div><div class="line">        frame.setSize(300, 200);   </div><div class="line">        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); </div><div class="line">        JPanel panel = new JPanel(); //</div><div class="line">        panel.setBackground(Color.red);</div><div class="line">        frame.setContentPane(panel);   </div><div class="line">        frame.setVisible(true);  </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><ul>
-<li><h5 id="顶层组件"><a href="#顶层组件" class="headerlink" title="顶层组件"></a>顶层组件</h5>包括 JFrame、JDialog、Japplet、 JWindow<br>JFrame是大多数应用程序的基本窗口，有边框、标题和按钮，允许程序员把其他组件添 加到它里面，把它们组织起来，并把它们呈现给用户。 </li>
-<li><h5 id="中间组件-二级容器"><a href="#中间组件-二级容器" class="headerlink" title="中间组件 - 二级容器"></a>中间组件 - 二级容器</h5><p>必须放在顶层容器内，且能够容纳其他控件<br>包括JPanel、JScrollPane、JToolBar、JSplitPane、JTabbedPane </p>
-<blockquote>
-<ul>
-<li>JPanel：常规面板</li>
-<li>JScrollPane：滚动面板，即带有长宽滚动条，主要用来容纳大型控件</li>
-<li>JToolBar：工具栏面板，包含图标按钮</li>
-<li>JSplitPane：分割式面板</li>
-<li>JTabbedPane：选项卡面板</li>
-</ul>
-</blockquote>
-</li>
-<li><h5 id="基本组件"><a href="#基本组件" class="headerlink" title="基本组件"></a>基本组件</h5><blockquote>
-<ul>
-<li><strong>按钮</strong>：JButton（常规按钮）、JCheckBox（复选框）、JRadioButton（单选按钮）。 </li>
-<li><strong>文本组件</strong>：JTextField（文本字段）、JPasswoordField（密码框）、JTextArea（纯文本）。 <ul>
-<li><strong>不可编辑显示组件</strong>：JLabel（显示不可编辑文本）、JToolTip（显示不可编辑文本）、 JProgreesBar（进度条）。 </li>
-</ul>
-</li>
-<li><strong>菜单</strong>：JMenu（普通菜单）、JPopupMenu（弹出式菜单）。 </li>
-<li><strong>其他组件</strong>：JFileChooser（文件选择器）、JColorChooser（颜色选择器）、JTable（表 格）、JTree（树）、JComboBox（下拉框）等等。</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h2 id="布局器"><a href="#布局器" class="headerlink" title="布局器"></a>布局器</h2><p><img src="http://upload-images.jianshu.io/upload_images/3775272-733d4112e1b16955.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="布局器机制"></p>
-<blockquote>
-<ul>
-<li><strong>Flow layout</strong> 横向浮动</li>
-<li><strong>Box layout</strong> 纵向浮动</li>
-<li><strong>Border layout</strong> 东南西北中五个方位</li>
-<li><strong>Grid layout</strong> 几行几列</li>
-<li><strong>组合嵌套</strong> 前几个嵌套</li>
-</ul>
-</blockquote>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://upload-images.jianshu.io/upload_images/3775272-2564d5397bea7a96.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="组合嵌套"></h2><h2 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h2><p><img src="http://upload-images.jianshu.io/upload_images/3775272-1e44b8e8444a3bed.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="交互"></p>
-<h6 id="鼠标交互MouseListener-接口"><a href="#鼠标交互MouseListener-接口" class="headerlink" title="鼠标交互MouseListener 接口"></a>鼠标交互MouseListener 接口</h6><blockquote>
-<p>void mousePressed(MouseEvent evt);<br>void mouseReleased(MouseEvent evt);<br>void mouseClicked(MouseEvent evt);<br>void mouseEntered(MouseEvent evt);<br>void mouseExited(MouseEvent evt);</p>
-</blockquote>
-<p>source.addMouseListener(mListener); </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/31/Java-GUI/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Neural-Networks-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/31/Neural-Networks-2/">Neural Networks(2) descent&amp;computation Graph</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/31/Neural-Networks-2/" class="archive-article-date">
-  	<time datetime="2017-10-31T07:59:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="17-10-30-MWhite’s-learning-notes"><a href="#17-10-30-MWhite’s-learning-notes" class="headerlink" title="17/10/30 MWhite’s learning notes"></a>17/10/30 MWhite’s learning notes</h6><h1 id="Recap"><a href="#Recap" class="headerlink" title="Recap"></a>Recap</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-ebe7ab2e35107e38.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="Gradient-descent-algorithm"><a href="#Gradient-descent-algorithm" class="headerlink" title="Gradient descent algorithm"></a>Gradient descent algorithm</h1><blockquote>
-<p>want to find w&amp;b that minimize J(w,b)</p>
-<p>w:=w-a*dJ(w,b)/dw<br>(a-learning rate)</p>
-</blockquote>
-<h1 id="Derivate-amp-calculus"><a href="#Derivate-amp-calculus" class="headerlink" title="Derivate&amp;calculus"></a>Derivate&amp;calculus</h1><blockquote>
-<p>Skip</p>
-</blockquote>
-<h1 id="Computation-Graph"><a href="#Computation-Graph" class="headerlink" title="Computation Graph"></a>Computation Graph</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-752dfc34e110208a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-02d2ec076bd8283a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/31/Neural-Networks-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
