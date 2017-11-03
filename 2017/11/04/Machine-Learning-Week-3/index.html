@@ -6,15 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://drmofu.github.io">
-  <title>Archives: 2017 | M小白博客</title>
+  <title>Machine Learning Week 3-Classification | M小白博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="M小白博客">
-<meta property="og:url" content="https://drmofu.github.io/archives/2017/index.html">
+  <meta name="description" content="17/11/03 MWhite’s learning notes1. ClassificationLinear Regression :y∈RClassification(logistic regression) : y∈{0,1,…} 1.1 Hypothesis Representation  1.2 Logistic regression’s Cost FunctionSimplified">
+<meta name="keywords" content="AI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning Week 3-Classification">
+<meta property="og:url" content="https://drmofu.github.io/2017/11/04/Machine-Learning-Week-3/index.html">
 <meta property="og:site_name" content="M小白博客">
+<meta property="og:description" content="17/11/03 MWhite’s learning notes1. ClassificationLinear Regression :y∈RClassification(logistic regression) : y∈{0,1,…} 1.1 Hypothesis Representation  1.2 Logistic regression’s Cost FunctionSimplified">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-884ba180c6cb119b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-b6fd8ba079d253c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-91d69d6b6dae9d31.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-e02e3d57ce1be0e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-46cad3500ce3ac31.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-976a92111c2f01cf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-76bc7a7ac74003f7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-9d8a72eb9915a82a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-fdfc102518a6093a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-11-03T16:01:50.768Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="M小白博客">
+<meta name="twitter:title" content="Machine Learning Week 3-Classification">
+<meta name="twitter:description" content="17/11/03 MWhite’s learning notes1. ClassificationLinear Regression :y∈RClassification(logistic regression) : y∈{0,1,…} 1.1 Hypothesis Representation  1.2 Logistic regression’s Cost FunctionSimplified">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3775272-884ba180c6cb119b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="M小白博客" type="application/atom+xml">
   
@@ -162,36 +177,73 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Machine-Learning-Week-3" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Machine Learning Week 3-Classification
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/04/Machine-Learning-Week-3/" class="archive-article-date">
+
+        
+        <a href="/2017/11/04/Machine-Learning-Week-3/" class="archive-article-date">
   	<time datetime="2017-11-03T16:00:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-04</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/04/Machine-Learning-Week-3/">Machine Learning Week 3-Classification</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="17-11-03-MWhite’s-learning-notes"><a href="#17-11-03-MWhite’s-learning-notes" class="headerlink" title="17/11/03 MWhite’s learning notes"></a>17/11/03 MWhite’s learning notes</h6><h1 id="1-Classification"><a href="#1-Classification" class="headerlink" title="1. Classification"></a>1. Classification</h1><p>Linear Regression :y∈R<br>Classification(logistic regression) : y∈{0,1,…}</p>
+<h3 id="1-1-Hypothesis-Representation"><a href="#1-1-Hypothesis-Representation" class="headerlink" title="1.1 Hypothesis Representation"></a>1.1 Hypothesis Representation</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-884ba180c6cb119b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-b6fd8ba079d253c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="1-2-Logistic-regression’s-Cost-Function"><a href="#1-2-Logistic-regression’s-Cost-Function" class="headerlink" title="1.2 Logistic regression’s Cost Function"></a>1.2 Logistic regression’s Cost Function</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-91d69d6b6dae9d31.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Simplified Cost Function<br><img src="http://upload-images.jianshu.io/upload_images/3775272-e02e3d57ce1be0e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simplified Cost Function"><br><img src="http://upload-images.jianshu.io/upload_images/3775272-46cad3500ce3ac31.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="1-3-Logistic-regression’s-Gradient-Descent"><a href="#1-3-Logistic-regression’s-Gradient-Descent" class="headerlink" title="1.3 Logistic regression’s  Gradient Descent"></a>1.3 Logistic regression’s  Gradient Descent</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-976a92111c2f01cf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Vectorized implementation:<br><img src="http://upload-images.jianshu.io/upload_images/3775272-76bc7a7ac74003f7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="1-4-Advanced-Optimization"><a href="#1-4-Advanced-Optimization" class="headerlink" title="1.4 Advanced Optimization"></a>1.4 Advanced Optimization</h3><p>library function——fminunc()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function [jVal, gradient] = costFunction(theta)</div><div class="line">  jVal = [...code to compute J(theta)...];</div><div class="line">  gradient = [...code to compute derivative of J(theta)...];</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">options = optimset(&apos;GradObj&apos;, &apos;on&apos;, &apos;MaxIter&apos;, 100);</div><div class="line">initialTheta = zeros(2,1);</div><div class="line">   [optTheta, functionVal, exitFlag] = fminunc(@costFunction, initialTheta, options);</div></pre></td></tr></table></figure>
+<h1 id="2-Multiclass-Classification"><a href="#2-Multiclass-Classification" class="headerlink" title="2. Multiclass Classification"></a>2. Multiclass Classification</h1><p>One-vs-all<br><img src="http://upload-images.jianshu.io/upload_images/3775272-9d8a72eb9915a82a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-fdfc102518a6093a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢投食<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/images/Alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/images/WeChat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -203,163 +255,129 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://drmofu.github.io/2017/11/04/Machine-Learning-Week-3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/02/Octave-学习笔记/" class="archive-article-date">
-  	<time datetime="2017-11-02T13:58:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/02/Octave-学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Octave 学习笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/02/Octave-学习笔记/">Octave 学习笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#17-11-03-MWhite’s-learning-notes"><span class="toc-number">1.</span> <span class="toc-text">17/11/03 MWhite’s learning notes</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Classification"><span class="toc-number"></span> <span class="toc-text">1. Classification</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Hypothesis-Representation"><span class="toc-number"></span> <span class="toc-text">1.1 Hypothesis Representation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Logistic-regression’s-Cost-Function"><span class="toc-number"></span> <span class="toc-text">1.2 Logistic regression’s Cost Function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Logistic-regression’s-Gradient-Descent"><span class="toc-number"></span> <span class="toc-text">1.3 Logistic regression’s  Gradient Descent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-Advanced-Optimization"><span class="toc-number"></span> <span class="toc-text">1.4 Advanced Optimization</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Multiclass-Classification"><span class="toc-number"></span> <span class="toc-text">2. Multiclass Classification</span></a>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/02/Geek-Git中使用ssh/" class="archive-article-date">
-  	<time datetime="2017-11-02T10:22:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/02/Geek-Git中使用ssh/">Git中使用SSH</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/02/Geek-Host/" class="archive-article-date">
-  	<time datetime="2017-11-02T09:23:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/02/Geek-Host/">极客——更改Host</a>
-    </h1>
+  <div id="SOHUCS" sid="Machine-Learning-Week-3" ></div> 
+<script type="text/javascript"> 
+window.YiliaChangyanWrap = function() {
+    var appid = "cytih0qqU"; 
+    var conf = "prod_f75c6efc13a8a90643f916c94caec1a4"; 
+    var width = window.innerWidth || document.documentElement.clientWidth; 
+    if (width < 960) { 
+    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); }
+}
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">极客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/01/Machine-Learning-2/" class="archive-article-date">
-  	<time datetime="2017-11-01T15:15:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/01/Machine-Learning-2/">Machine Learning Week 2</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -383,8 +401,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
