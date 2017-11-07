@@ -164,6 +164,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Geek-Git中使用ssh" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/Geek-Git中使用ssh/">Git中使用SSH</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/Geek-Git中使用ssh/" class="archive-article-date">
+  	<time datetime="2017-11-02T10:22:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MWrite’s Note</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本教程记录如何用ssh建立连接，从而免去我们用git提交文件到github时每次都要输入用户验证。<br><strong>不建议不会git的同学看本教程</strong><br>SSH 为建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。</p>
+<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><p>关于ssh是什么，推荐看<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="external">SSH原理与运用（一）：远程登录</a><br>进入正题<br>创建一个github的库后，我们使用ssh的方式连接我们本地和github。<br><img src="http://upload-images.jianshu.io/upload_images/3775272-25d99fea19ba3812.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>假设我们本地已经有了要上交的文件。<br>先在本地</p>
+<ol>
+<li><p>初始化git</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure>
+</li>
+<li><p>添加连接<br>git remote add 一个代称 git@github.com:你的账户/库名词.git</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin git@github.com:MWhite/test.git</div></pre></td></tr></table></figure>
+</li>
+<li><p>SSH身份验证<br>首先，生成我们ssh的key</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;(你的邮箱)&quot;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>出现如下内容<br><img src="http://upload-images.jianshu.io/upload_images/3775272-6b14708b9666d3d3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>然后在自己的github页面找到自己的ssh keys页面<br><img src="http://upload-images.jianshu.io/upload_images/3775272-89e554891e3e72e3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>选择“New SSH key”,然后填写title和key<br>Title自己取一个名字就行<br><img src="http://upload-images.jianshu.io/upload_images/3775272-f85d4cb4815076ab.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>key写之前我们用ssh-keygen生成的公钥<br>还记得之前我们用ssh-keygen成功有后下面这一句话把<br><img src="http://upload-images.jianshu.io/upload_images/3775272-f7b35f48dd4ed8a5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>cd找到这个地方，cat查看id_rsa.pub文件，将其中的所有内容复制，放到github ssh页面的Key里面<br><img src="http://upload-images.jianshu.io/upload_images/3775272-5ec5bb480f0de581.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>之后就完事大吉了，我们可以在~/.ssh目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure></p>
+<p>查看是否连接成功，中途有一个Are you sure？直接Yes即可<br><img src="http://upload-images.jianshu.io/upload_images/3775272-7cbf3f8317641312.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>如果左后能出现你的用户名，（我的是DrMofu），那么恭喜你，验证成功了。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ol>
+<li>已经有https的remote了，如何改成ssh的</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-7e9c8f0f73758933.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>源自网络，地址见参考2</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
+<li><a href="http://blog.csdn.net/bacteriumx/article/details/77543199。" target="_blank" rel="external">Git添加GitHub远程库免去账号密码验证</a></li>
+<li><a href="https://segmentfault.com/a/1190000002645623" target="_blank" rel="external">git-ssh 配置和使用</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/02/Geek-Git中使用ssh/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Geek-Host" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -299,94 +385,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/11/01/Machine-Learning-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Matlab学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/01/Matlab学习笔记/">Matlab 学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/01/Matlab学习笔记/" class="archive-article-date">
-  	<time datetime="2017-11-01T09:27:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Author：MWhite<br>Update time：17.11.01<br><a href="https://cn.mathworks.com/help/matlab/getting-started-with-matlab.html" target="_blank" rel="external">Matlabg官方地址</a><br><a href="https://drmofu.github.io/2017/11/02/Octave-学习笔记/">Octave学习笔记</a></p>
-<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>a = [1 2 3; 4 5 6; 7 8 10]<br>a’ 转置<br>p = inv(a) 反转<br>p = a.*a 执行元素级运算<br>a.^3<br>A = [a,a] 串联<br>A = [a; a] 并联<br>c = [3+4i, 4+3j; -i, 10j]</p>
-<p><strong>索引 start:end</strong><br>A(4,2)<br>A(1:3,2)<br>A(3,:)</p>
-<h1 id="工作区变量"><a href="#工作区变量" class="headerlink" title="工作区变量"></a>工作区变量</h1><p>退出 MATLAB 后，工作区变量不会保留。使用 save 命令保存数据以供将来使用<br>save myfile.mat<br>load myfile.mat</p>
-<h1 id="文本和字符"><a href="#文本和字符" class="headerlink" title="文本和字符"></a>文本和字符</h1><p><strong>如果文本包含单引号，请在定义中使用两个单引号</strong><br>otherText = ‘You’’re right’<br><strong>串联字符</strong><br>longText = [myText,’ - ‘,otherText]<br><strong>数字转字符 num2str()</strong><br>tempText = [‘Temperature is ‘,num2str(c),’C’]</p>
-<h1 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h1><p>A = [1 3 5];<br>max(A)<br><strong>赋值如果存在多个输出参数，请将其括在方括号中</strong><br>[maxA,location] = max(A)<br><strong>将任何字符输入括在单引号中</strong><br>disp(‘hello world’)</p>
-<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>whos myText 查看<br>clc 函数清除命令行窗口。</p>
-<h1 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h1><p>x = 0:pi/100:2*pi;<br>y = sin(x);<br>xlabel(‘x’)<br>ylabel(‘sin(x)’)<br>title(‘Plot of the Sine Function’)<br>hold on<br>plot(x,y,’r–’)<br><img src="http://upload-images.jianshu.io/upload_images/3775272-ff42a536736673b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="三维图像"><a href="#三维图像" class="headerlink" title="三维图像"></a>三维图像</h1><p>要计算 z，请首先使用 meshgrid 在此函数的域中创建一组 (x,y) 点。<br>[X,Y] = meshgrid(-2:.2:2);<br>Z = X .* exp(-X.^2 - Y.^2);<br>surf(X,Y,Z)</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-d27a0c37722c7dbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>绘制多图<br>subplot 的前两个输入表示每行和每列中的绘图数。第三个输入指定绘图是否处于活动状态。例如，在图窗口的 2×2 网格中创建四个绘图。<br>t = 0:pi/10:2<em>pi;<br>[X,Y,Z] = cylinder(4</em>cos(t));<br>subplot(2,2,1); mesh(X); title(‘X’);<br>subplot(2,2,2); mesh(Y); title(‘Y’);<br>subplot(2,2,3); mesh(Z); title(‘Z’);<br>subplot(2,2,4); mesh(X,Y,Z); title(‘X,Y,Z’);</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-7d0f217c47a759ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Matlab</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/01/Matlab学习笔记/">展开全文 >></a>
         </p>
       
 
