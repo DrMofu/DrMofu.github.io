@@ -164,6 +164,104 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java-学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/12/Java-学习笔记/">Java 学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/12/Java-学习笔记/" class="archive-article-date">
+  	<time datetime="2017-11-12T13:58:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Author：MWhite<br>Update time：17.11.12</p>
+<h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><h3 id="JFrame"><a href="#JFrame" class="headerlink" title="JFrame"></a>JFrame</h3><pre><code>this.setSize(new Dimension(300, 300));
+this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+this.setResizable(false);
+this.setLocation(500, 400);
+
+// 添加成员组件
+this.bv = new BoardView(this.game.getBoard());
+this.bv.addMouseListener(new GameController(this));
+this.setContentPane(this.子组件名);
+this.pack();//是调整外部容器大小的方法，自动调整成刚好装下内部组件。
+this.setVisible(true);
+</code></pre><h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><ol>
+<li><p>截取字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int a=line.indexOf(&apos;,&apos;);</div><div class="line">String name = line.substring(0,a);</div></pre></td></tr></table></figure>
+</li>
+<li><p>替换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String newstr = line.replace(&quot;,&quot;, &quot; &quot;);</div><div class="line">trim();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><p>List<string> list = new ArrayList<string>();<br>遍历<br>方法一：<br>超级for循环遍历<br>for(String attribute : list) {<br>  System.out.println(attribute);<br>}<br>方法二：<br>对于ArrayList来说速度比较快, 用for循环, 以size为条件遍历:<br>for(int i = 0 ; i &lt; list.size() ; i++) {<br>  System.out.println(list.get(i));<br>}<br>方法三：<br>集合类的通用遍历方式, 从很早的版本就有, 用迭代器迭代<br>Iterator it = list.iterator();<br>while(it.hasNext()) {<br>  System.ou.println(it.next);<br>}</string></string></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/12/Java-学习笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Machine-Learning-Week-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -346,98 +444,9 @@
 
 
   
-    <article id="post-Machine-Learning-Week-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/04/Machine-Learning-Week-3/">Machine Learning Week 3-Classification</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/04/Machine-Learning-Week-3/" class="archive-article-date">
-  	<time datetime="2017-11-03T16:00:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="17-11-07-MWhite’s-learning-notes"><a href="#17-11-07-MWhite’s-learning-notes" class="headerlink" title="17/11/07 MWhite’s learning notes"></a>17/11/07 MWhite’s learning notes</h6><h1 id="1-Classification"><a href="#1-Classification" class="headerlink" title="1. Classification"></a>1. Classification</h1><p>Linear Regression :y∈R<br>Classification(logistic regression) : y∈{0,1,…}</p>
-<h3 id="1-1-Hypothesis-Representation"><a href="#1-1-Hypothesis-Representation" class="headerlink" title="1.1 Hypothesis Representation"></a>1.1 Hypothesis Representation</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-884ba180c6cb119b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-b6fd8ba079d253c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="1-2-Logistic-regression’s-Cost-Function"><a href="#1-2-Logistic-regression’s-Cost-Function" class="headerlink" title="1.2 Logistic regression’s Cost Function"></a>1.2 Logistic regression’s Cost Function</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-91d69d6b6dae9d31.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Simplified Cost Function<br><img src="http://upload-images.jianshu.io/upload_images/3775272-e02e3d57ce1be0e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simplified Cost Function"><br><img src="http://upload-images.jianshu.io/upload_images/3775272-46cad3500ce3ac31.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="1-3-Logistic-regression’s-Gradient-Descent"><a href="#1-3-Logistic-regression’s-Gradient-Descent" class="headerlink" title="1.3 Logistic regression’s  Gradient Descent"></a>1.3 Logistic regression’s  Gradient Descent</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-976a92111c2f01cf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Vectorized implementation:<br><img src="http://upload-images.jianshu.io/upload_images/3775272-76bc7a7ac74003f7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="1-4-Advanced-Optimization"><a href="#1-4-Advanced-Optimization" class="headerlink" title="1.4 Advanced Optimization"></a>1.4 Advanced Optimization</h3><p>library function——fminunc()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function [jVal, gradient] = costFunction(theta)</div><div class="line">  jVal = [...code to compute J(theta)...];</div><div class="line">  gradient = [...code to compute derivative of J(theta)...];</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">options = optimset(&apos;GradObj&apos;, &apos;on&apos;, &apos;MaxIter&apos;, 100);</div><div class="line">initialTheta = zeros(2,1);</div><div class="line">   [optTheta, functionVal, exitFlag] = fminunc(@costFunction, initialTheta, options);</div></pre></td></tr></table></figure>
-<h1 id="2-Multiclass-Classification"><a href="#2-Multiclass-Classification" class="headerlink" title="2. Multiclass Classification"></a>2. Multiclass Classification</h1><p>One-vs-all<br><img src="http://upload-images.jianshu.io/upload_images/3775272-9d8a72eb9915a82a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-fdfc102518a6093a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="3-Overfitting"><a href="#3-Overfitting" class="headerlink" title="3. Overfitting"></a>3. Overfitting</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-4611b5d88d1f336d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-c3d17b32f0756497.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>skips θ0</strong></p>
-<h3 id="3-1-Regularized-Linear-Regression"><a href="#3-1-Regularized-Linear-Regression" class="headerlink" title="3.1 Regularized Linear Regression"></a>3.1 Regularized Linear Regression</h3><ul>
-<li>Cost Function<br><img src="http://upload-images.jianshu.io/upload_images/3775272-a0ff553a683aaed0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-<li>Gradient descent<br><img src="http://upload-images.jianshu.io/upload_images/3775272-d8195556f3a3a53d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-<li>Normal Equation<br><img src="http://upload-images.jianshu.io/upload_images/3775272-f52a901c8aea7cb2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><h3 id="3-2-Regularized-Logistic-Regression"><a href="#3-2-Regularized-Logistic-Regression" class="headerlink" title="3.2 Regularized Logistic Regression"></a>3.2 Regularized Logistic Regression</h3></li>
-<li>Cost Function<br><img src="http://upload-images.jianshu.io/upload_images/3775272-bb195853737d8eb1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-<li>Gradient descent<br><img src="http://upload-images.jianshu.io/upload_images/3775272-086e7c2d2f96b3f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/04/Machine-Learning-Week-3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -540,11 +549,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+                <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
               </li>
              
               <li class="article-tag-list-item">

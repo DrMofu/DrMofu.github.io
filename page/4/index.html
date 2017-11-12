@@ -164,6 +164,99 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Machine-Learning-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/01/Machine-Learning-1/">Machine Learning Week 1</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/01/Machine-Learning-1/" class="archive-article-date">
+  	<time datetime="2017-11-01T02:01:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="17-10-31-MWhite’s-learning-notes"><a href="#17-10-31-MWhite’s-learning-notes" class="headerlink" title="17/10/31 MWhite’s learning notes"></a>17/10/31 MWhite’s learning notes</h6><p>Supervised Learning &amp; Unsupervised Learning<br>Regression &amp; Classification</p>
+<h1 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h1><blockquote>
+<p>In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output.</p>
+<p>Supervised learning problems are categorized into <strong>“regression”</strong> and <strong>“classification”</strong> problems. In a regression problem, we are trying to predict results within a continuous output, meaning that we are trying to map input variables to some continuous function. In a classification problem, we are instead trying to predict results in a discrete output. In other words, we are trying to map input variables into discrete categories.</p>
+</blockquote>
+<h1 id="Unsupervised-Learning"><a href="#Unsupervised-Learning" class="headerlink" title="Unsupervised Learning"></a>Unsupervised Learning</h1><blockquote>
+<p>Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don’t necessarily know the effect of the variables.</p>
+<p>We can derive this structure by clustering the data based on relationships among the variables in the data.</p>
+<p>With unsupervised learning there is no feedback based on the prediction results.</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-6b46360349ab410f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="Cost-function"><a href="#Cost-function" class="headerlink" title="Cost function"></a>Cost function</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-64df788fa041e79c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Cost function"></p>
+<h3 id="The-relationship-between-hypothesis-function-and-cost-function"><a href="#The-relationship-between-hypothesis-function-and-cost-function" class="headerlink" title="The relationship between hypothesis function and cost function"></a>The relationship between hypothesis function and cost function</h3><p>we should try to minimize the cost function.<br><img src="http://upload-images.jianshu.io/upload_images/3775272-f0009553f6cc7c8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-5591cc5f6898fab9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>Two dimension</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-f956d5d67f5e5779.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="Gradient-descent"><a href="#Gradient-descent" class="headerlink" title="Gradient descent"></a>Gradient descent</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-916a4cecda956bbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Gradient descent is a kid of algorithms.<br><img src="http://upload-images.jianshu.io/upload_images/3775272-30bab3bd686c3c6f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="way"><br>And do remember update the parameters at the same time. (Simultaneously)</p>
+<p>alpha is learning rate (not too small, not too large)</p>
+<h3 id="Gradient-Descent-For-Linear-Regression"><a href="#Gradient-Descent-For-Linear-Regression" class="headerlink" title="Gradient Descent For Linear Regression"></a>Gradient Descent For Linear Regression</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-f9c5929045e3d032.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>The point of all this is that if we start with a guess for our hypothesis and then repeatedly apply these gradient descent equations, our hypothesis will become more and more accurate.</p>
+<h1 id="Matrices-and-Vectors"><a href="#Matrices-and-Vectors" class="headerlink" title="Matrices and Vectors"></a>Matrices and Vectors</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-71c5e68eab42044b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-d13d95f4b6d89553.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-e04049b50700d3e6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-d1e4b03ff2e4b268.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-7a63c8e6970837d9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-b4cb0ada9565b978.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Matrices are not commutative: A∗B≠B∗A<br>Matrices are associative: (A∗B)∗C=A∗(B∗C)<br><strong>identity matrix</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-4804aa0c06fa6175.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>inverse</strong> pinv(A)<br><strong>transposition</strong> AT</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/01/Machine-Learning-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Neural-Network-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -373,92 +466,9 @@
 
 
   
-    <article id="post-Neural-Networks-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/31/Neural-Networks-2/">Neural Networks(2) descent&amp;computation Graph</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/31/Neural-Networks-2/" class="archive-article-date">
-  	<time datetime="2017-10-31T07:59:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="17-10-30-MWhite’s-learning-notes"><a href="#17-10-30-MWhite’s-learning-notes" class="headerlink" title="17/10/30 MWhite’s learning notes"></a>17/10/30 MWhite’s learning notes</h6><h1 id="Recap"><a href="#Recap" class="headerlink" title="Recap"></a>Recap</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-ebe7ab2e35107e38.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="Gradient-descent-algorithm"><a href="#Gradient-descent-algorithm" class="headerlink" title="Gradient descent algorithm"></a>Gradient descent algorithm</h1><blockquote>
-<p>want to find w&amp;b that minimize J(w,b)</p>
-<p>w:=w-a*dJ(w,b)/dw<br>(a-learning rate)</p>
-</blockquote>
-<h1 id="Derivate-amp-calculus"><a href="#Derivate-amp-calculus" class="headerlink" title="Derivate&amp;calculus"></a>Derivate&amp;calculus</h1><blockquote>
-<p>Skip</p>
-</blockquote>
-<h1 id="Computation-Graph"><a href="#Computation-Graph" class="headerlink" title="Computation Graph"></a>Computation Graph</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-752dfc34e110208a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-02d2ec076bd8283a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/31/Neural-Networks-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 
@@ -561,11 +571,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+                <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
               </li>
              
               <li class="article-tag-list-item">
