@@ -164,6 +164,138 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java-GUI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/31/Java-GUI/">Java GUI</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/31/Java-GUI/" class="archive-article-date">
+  	<time datetime="2017-10-31T08:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Author：MWhite<br>Update time：17.10.31</p>
+<h2 id="AWT"><a href="#AWT" class="headerlink" title="AWT"></a>AWT</h2><ul>
+<li>Swing组件组合界面 </li>
+<li>AWT进行事件响应和处理</li>
+<li>AWT的布局管理器完成组件的布局</li>
+</ul>
+<h5 id="注意区分组件名称："><a href="#注意区分组件名称：" class="headerlink" title="注意区分组件名称："></a>注意区分组件名称：</h5><ul>
+<li>AWT: Frame, Button, Panel, … </li>
+<li>Swing: JFrame, Jbutton, Jpanel, … </li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-1538af9995ea5738.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="AWT+SWING" title="AWT+SWING"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">案例</div><div class="line">import javax.swing.JFrame; </div><div class="line">public class Simple2 &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        JFrame frame = new JFrame(“Hello World &quot;);   </div><div class="line">        frame.setSize(300, 200);   </div><div class="line">        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); </div><div class="line">        JPanel panel = new JPanel(); //</div><div class="line">        panel.setBackground(Color.red);</div><div class="line">        frame.setContentPane(panel);   </div><div class="line">        frame.setVisible(true);  </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><ul>
+<li><h5 id="顶层组件"><a href="#顶层组件" class="headerlink" title="顶层组件"></a>顶层组件</h5>包括 JFrame、JDialog、Japplet、 JWindow<br>JFrame是大多数应用程序的基本窗口，有边框、标题和按钮，允许程序员把其他组件添 加到它里面，把它们组织起来，并把它们呈现给用户。 </li>
+<li><h5 id="中间组件-二级容器"><a href="#中间组件-二级容器" class="headerlink" title="中间组件 - 二级容器"></a>中间组件 - 二级容器</h5><p>必须放在顶层容器内，且能够容纳其他控件<br>包括JPanel、JScrollPane、JToolBar、JSplitPane、JTabbedPane </p>
+<blockquote>
+<ul>
+<li>JPanel：常规面板</li>
+<li>JScrollPane：滚动面板，即带有长宽滚动条，主要用来容纳大型控件</li>
+<li>JToolBar：工具栏面板，包含图标按钮</li>
+<li>JSplitPane：分割式面板</li>
+<li>JTabbedPane：选项卡面板</li>
+</ul>
+</blockquote>
+</li>
+<li><h5 id="基本组件"><a href="#基本组件" class="headerlink" title="基本组件"></a>基本组件</h5><blockquote>
+<ul>
+<li><strong>按钮</strong>：JButton（常规按钮）、JCheckBox（复选框）、JRadioButton（单选按钮）。 </li>
+<li><strong>文本组件</strong>：JTextField（文本字段）、JPasswoordField（密码框）、JTextArea（纯文本）。 <ul>
+<li><strong>不可编辑显示组件</strong>：JLabel（显示不可编辑文本）、JToolTip（显示不可编辑文本）、 JProgreesBar（进度条）。 </li>
+</ul>
+</li>
+<li><strong>菜单</strong>：JMenu（普通菜单）、JPopupMenu（弹出式菜单）。 </li>
+<li><strong>其他组件</strong>：JFileChooser（文件选择器）、JColorChooser（颜色选择器）、JTable（表 格）、JTree（树）、JComboBox（下拉框）等等。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="布局器"><a href="#布局器" class="headerlink" title="布局器"></a>布局器</h2><p><img src="http://upload-images.jianshu.io/upload_images/3775272-733d4112e1b16955.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="布局器机制"></p>
+<blockquote>
+<ul>
+<li><strong>Flow layout</strong> 横向浮动</li>
+<li><strong>Box layout</strong> 纵向浮动</li>
+<li><strong>Border layout</strong> 东南西北中五个方位</li>
+<li><strong>Grid layout</strong> 几行几列</li>
+<li><strong>组合嵌套</strong> 前几个嵌套</li>
+</ul>
+</blockquote>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://upload-images.jianshu.io/upload_images/3775272-2564d5397bea7a96.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="组合嵌套"></h2><h2 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h2><p><img src="http://upload-images.jianshu.io/upload_images/3775272-1e44b8e8444a3bed.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="交互"></p>
+<h6 id="鼠标交互MouseListener-接口"><a href="#鼠标交互MouseListener-接口" class="headerlink" title="鼠标交互MouseListener 接口"></a>鼠标交互MouseListener 接口</h6><blockquote>
+<p>void mousePressed(MouseEvent evt);<br>void mouseReleased(MouseEvent evt);<br>void mouseClicked(MouseEvent evt);<br>void mouseEntered(MouseEvent evt);<br>void mouseExited(MouseEvent evt);</p>
+</blockquote>
+<p>source.addMouseListener(mListener); </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/31/Java-GUI/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Neural-Networks-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -344,6 +476,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
@@ -356,7 +492,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+                <a href="javascript:void(0)" class="js-tag color4">-AI</a>
               </li>
              
               <li class="article-tag-list-item">
