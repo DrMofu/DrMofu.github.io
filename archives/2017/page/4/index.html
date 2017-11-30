@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://drmofu.github.io">
-  <title>Java 学习笔记 | M小白博客</title>
+  <title>Archives: 2017 | M小白博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Author：MWhiteUpdate time：17.11.12 视图JFramethis.setSize(new Dimension(300, 300)); this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); this.setResizable(false); this.setLocation(500, 400);  // 添加成员组件 t">
-<meta name="keywords" content="学习笔记,Java">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java 学习笔记">
-<meta property="og:url" content="https://drmofu.github.io/2017/11/12/Java-学习笔记/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="M小白博客">
+<meta property="og:url" content="https://drmofu.github.io/archives/2017/page/4/index.html">
 <meta property="og:site_name" content="M小白博客">
-<meta property="og:description" content="Author：MWhiteUpdate time：17.11.12 视图JFramethis.setSize(new Dimension(300, 300)); this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); this.setResizable(false); this.setLocation(500, 400);  // 添加成员组件 t">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-12T13:59:07.306Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java 学习笔记">
-<meta name="twitter:description" content="Author：MWhiteUpdate time：17.11.12 视图JFramethis.setSize(new Dimension(300, 300)); this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); this.setResizable(false); this.setLocation(500, 400);  // 添加成员组件 t">
+<meta name="twitter:title" content="M小白博客">
   
     <link rel="alternative" href="/atom.xml" title="M小白博客" type="application/atom+xml">
   
@@ -167,86 +162,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java-学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Java 学习笔记
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/10/31/Java-GUI/" class="archive-article-date">
+  	<time datetime="2017-10-31T08:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/10/31/Java-GUI/">Java GUI</a>
     </h1>
   
 
-        
-        <a href="/2017/11/12/Java-学习笔记/" class="archive-article-date">
-  	<time datetime="2017-11-12T13:58:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Author：MWhite<br>Update time：17.11.12</p>
-<h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><h3 id="JFrame"><a href="#JFrame" class="headerlink" title="JFrame"></a>JFrame</h3><pre><code>this.setSize(new Dimension(300, 300));
-this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-this.setResizable(false);
-this.setLocation(500, 400);
-
-// 添加成员组件
-this.bv = new BoardView(this.game.getBoard());
-this.bv.addMouseListener(new GameController(this));
-this.setContentPane(this.子组件名);
-this.pack();//是调整外部容器大小的方法，自动调整成刚好装下内部组件。
-this.setVisible(true);
-</code></pre><h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><ol>
-<li><p>截取字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int a=line.indexOf(&apos;,&apos;);</div><div class="line">String name = line.substring(0,a);</div></pre></td></tr></table></figure>
-</li>
-<li><p>替换</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String newstr = line.replace(&quot;,&quot;, &quot; &quot;);</div><div class="line">trim();</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><p>List<string> list = new ArrayList<string>();<br>遍历<br>方法一：<br>超级for循环遍历<br>for(String attribute : list) {<br>  System.out.println(attribute);<br>}<br>方法二：<br>对于ArrayList来说速度比较快, 用for循环, 以size为条件遍历:<br>for(int i = 0 ; i &lt; list.size() ; i++) {<br>  System.out.println(list.get(i));<br>}<br>方法三：<br>集合类的通用遍历方式, 从很早的版本就有, 用迭代器迭代<br>Iterator it = list.iterator();<br>while(it.hasNext()) {<br>  System.ou.println(it.next);<br>}</string></string></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢投食<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/images/Alipay.png">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/images/WeChat.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -262,138 +207,60 @@ this.setVisible(true);
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://drmofu.github.io/2017/11/12/Java-学习笔记/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2017/11/19/人工智能学习清单/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          人工智能学习清单
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/11/09/Machine-Learning-Week-5/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Machine Learning Week 5-Neural Networks(2)</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/10/31/Neural-Networks-2/" class="archive-article-date">
+  	<time datetime="2017-10-31T07:59:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
+</a>
         </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#视图"><span class="toc-number">1.</span> <span class="toc-text">视图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JFrame"><span class="toc-number">1.0.1.</span> <span class="toc-text">JFrame</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串"><span class="toc-number">2.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#List"><span class="toc-number">3.</span> <span class="toc-text">List</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/10/31/Neural-Networks-2/">Neural Networks(2) descent&amp;computation Graph</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
         </div>
-        
-    </div>
-</aside>
-
-
-
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
   
+    </div></section>
   
 
-  
-  <div id="SOHUCS" sid="Java-学习笔记" ></div> 
-<script type="text/javascript"> 
-window.YiliaChangyanWrap = function() {
-    var appid = "cytih0qqU"; 
-    var conf = "prod_f75c6efc13a8a90643f916c94caec1a4"; 
-    var width = window.innerWidth || document.documentElement.clientWidth; 
-    if (width < 960) { 
-    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); }
-}
-</script>
-  
-
-  
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2017/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/2017/">1</a><a class="page-number" href="/archives/2017/page/2/">2</a><a class="page-number" href="/archives/2017/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
   
 
 
@@ -417,8 +284,8 @@ window.YiliaChangyanWrap = function() {
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

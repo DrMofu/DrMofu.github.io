@@ -164,6 +164,244 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-人工智能学习清单" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/19/人工智能学习清单/">人工智能学习清单</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/19/人工智能学习清单/" class="archive-article-date">
+  	<time datetime="2017-11-19T14:06:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MWhite’s Learning Note<br>17/11/19</p>
+<h1 id="初学者入门清单"><a href="#初学者入门清单" class="headerlink" title="初学者入门清单"></a>初学者入门清单</h1><h3 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h3><ul>
+<li><a href="http://pan.baidu.com/s/1kUG26FX" target="_blank" rel="external">《机器学习》 西瓜书 周志华</a></li>
+<li><a href="http://pan.baidu.com/s/1skJEgQL" target="_blank" rel="external">The Elements of Statistical</a></li>
+<li><a href="http://pan.baidu.com/s/1eSGSYMA" target="_blank" rel="external">Pattern Recognition and Machine Learning</a><h3 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h3></li>
+<li>竞赛网站 kaggle.com\<br>python人工智能学习库：scikit-learn<h3 id="课程"><a href="#课程" class="headerlink" title="课程"></a>课程</h3></li>
+<li>Coursera 吴恩达 Machine Learning <h3 id="顶级会议以及期刊"><a href="#顶级会议以及期刊" class="headerlink" title="顶级会议以及期刊"></a>顶级会议以及期刊</h3></li>
+<li>ICML,NIPS,COLT</li>
+<li>AAAI,IJCAI</li>
+<li>ECML,ACML</li>
+</ul>
+<hr>
+<h1 id="知识概念清单"><a href="#知识概念清单" class="headerlink" title="知识概念清单"></a>知识概念清单</h1><p><strong>以下内容初学者无视</strong></p>
+<p>特征提取feature extraction</p>
+<h3 id="模型评估与选择"><a href="#模型评估与选择" class="headerlink" title="模型评估与选择"></a>模型评估与选择</h3><ol>
+<li>测试集与训练集互斥<ul>
+<li>留出法</li>
+<li>k-折交叉验证</li>
+<li>自助法 有放回的采样</li>
+</ul>
+</li>
+<li>调参与最终模型<br>算法的参数：超参数（hyper-parameter）人给出<br>模型的参数：学习得到</li>
+<li>性能量度（Performance measure）</li>
+<li><p>查准率与查全率</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">P=TP/(TP+FP) 准确率 预测正确数中正确数比例</div><div class="line">R=TP/(TP+TN) 查全率 正确数中预测正确的比例</div></pre></td></tr></table></figure>
+<p> P与R无法同时达到最大值，二者取舍、偏好权重<br> PR图 BEP F1 ROC AUC</p>
+</li>
+</ol>
+<h3 id="线性模型-linear-model"><a href="#线性模型-linear-model" class="headerlink" title="线性模型 linear model"></a>线性模型 linear model</h3><ul>
+<li>线性回归 linear regression<br>结果为一个数值<br>方法：找一个代价函数（衡量拟合程度），通过手段找特定的权重使代价函数值最低</li>
+<li>逻辑回归（分类） logistic regression /对数几率回归<br>结果为0或1（离散个结果）</li>
+<li>梯度下降（gradient descent）——找代价函数（又叫损失函数）最小值以及其对应权重的方法</li>
+<li>拓展到多类（两类分类器拓展到多类）</li>
+<li>类别不平衡（class unbalance）问题<ul>
+<li>过采样（oversampling）如STOME算法</li>
+<li>欠采样（undersampling）</li>
+<li>阈值移动 （threshold moving）<h3 id="决策树（decision-tree）"><a href="#决策树（decision-tree）" class="headerlink" title="决策树（decision tree）"></a>决策树（decision tree）</h3>基于树结构的分类器</li>
+</ul>
+</li>
+<li>决策：分而治之（divide and conquer）</li>
+<li>停止条件：<ul>
+<li>样本属性相同</li>
+<li>样本属于同一类</li>
+<li>样本集为空</li>
+</ul>
+</li>
+<li>划分方法：<ol>
+<li>信息增益（information gain）</li>
+<li>基尼指数（gini index）<h3 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h3>间隔（margin）支持向量（support vector）<br>最大化分类线与最近样本直接的间隔<br>凸二次规划<br>对偶问题 拉格朗日函数</li>
+</ol>
+</li>
+</ul>
+<h3 id="Nonlinear-SVMs"><a href="#Nonlinear-SVMs" class="headerlink" title="Nonlinear SVMs"></a>Nonlinear SVMs</h3><p>做一个映射，从而可以线性分类<br>核函数</p>
+<ul>
+<li>软间隔<ul>
+<li>不满足约束的样本尽量少</li>
+<li>凸近似（convex surrogate）</li>
+<li>正则化（regulariztion）</li>
+</ul>
+</li>
+</ul>
+<h3 id="聚类（clustering）"><a href="#聚类（clustering）" class="headerlink" title="聚类（clustering）"></a>聚类（clustering）</h3><p>数据样本分为多个不想交的簇（cluster）<br>基本思想：簇内相似度高，簇间相似度低<br>距离计算（distance measure）<br>度量学习（metric learning）</p>
+<ul>
+<li>马氏距离 各向异性</li>
+</ul>
+<p>k均值聚类算法（k-means）<br>spectral clustering<br>Normalized Cut</p>
+<h3 id="降维和度量学习"><a href="#降维和度量学习" class="headerlink" title="降维和度量学习"></a>降维和度量学习</h3><p>k近邻分类器<br>降维（dimension reduction）<br>主成分分析（Principal Component Analysis）<br>流形学习（manifold learning）<br>局部线性嵌入（Local linear embedding）</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/19/人工智能学习清单/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java-学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/12/Java-学习笔记/">Java 学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/12/Java-学习笔记/" class="archive-article-date">
+  	<time datetime="2017-11-12T13:58:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Author：MWhite<br>Update time：17.11.12</p>
+<h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><h3 id="JFrame"><a href="#JFrame" class="headerlink" title="JFrame"></a>JFrame</h3><pre><code>this.setSize(new Dimension(300, 300));
+this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+this.setResizable(false);
+this.setLocation(500, 400);
+
+// 添加成员组件
+this.bv = new BoardView(this.game.getBoard());
+this.bv.addMouseListener(new GameController(this));
+this.setContentPane(this.子组件名);
+this.pack();//是调整外部容器大小的方法，自动调整成刚好装下内部组件。
+this.setVisible(true);
+</code></pre><h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><ol>
+<li><p>截取字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int a=line.indexOf(&apos;,&apos;);</div><div class="line">String name = line.substring(0,a);</div></pre></td></tr></table></figure>
+</li>
+<li><p>替换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String newstr = line.replace(&quot;,&quot;, &quot; &quot;);</div><div class="line">trim();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><p>List<string> list = new ArrayList<string>();<br>遍历<br>方法一：<br>超级for循环遍历<br>for(String attribute : list) {<br>  System.out.println(attribute);<br>}<br>方法二：<br>对于ArrayList来说速度比较快, 用for循环, 以size为条件遍历:<br>for(int i = 0 ; i &lt; list.size() ; i++) {<br>  System.out.println(list.get(i));<br>}<br>方法三：<br>集合类的通用遍历方式, 从很早的版本就有, 用迭代器迭代<br>Iterator it = list.iterator();<br>while(it.hasNext()) {<br>  System.ou.println(it.next);<br>}</string></string></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/12/Java-学习笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Machine-Learning-Week-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -267,177 +505,9 @@
 
 
   
-    <article id="post-Machine-Learning-Week-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/07/Machine-Learning-Week-4/">Machine Learning Week 4-Neural Networks</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/07/Machine-Learning-Week-4/" class="archive-article-date">
-  	<time datetime="2017-11-07T15:03:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="17-11-07-MWhite’s-learning-notes"><a href="#17-11-07-MWhite’s-learning-notes" class="headerlink" title="17/11/07 MWhite’s learning notes"></a>17/11/07 MWhite’s learning notes</h6><h1 id="1-Neural-Networks"><a href="#1-Neural-Networks" class="headerlink" title="1. Neural Networks"></a>1. Neural Networks</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-e7ce0cd6b6bb3f8c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-55d18c6995717b47.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-bf7d8939b01b26b3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-91f92152e6fdb5a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<ul>
-<li>vectorize<br><img src="http://upload-images.jianshu.io/upload_images/3775272-40330c5021aa4686.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-c4ae3953b1d64f82.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Notice that in this last step, between layer j and layer j+1, we are doing exactly the same thing as we did in logistic regression.<br><img src="http://upload-images.jianshu.io/upload_images/3775272-da504e7bc4416215.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><h1 id="2-Applications"><a href="#2-Applications" class="headerlink" title="2. Applications"></a>2. Applications</h1><img src="http://upload-images.jianshu.io/upload_images/3775272-af7a22920408ddbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-<li>Multiclass Classification<br><img src="http://upload-images.jianshu.io/upload_images/3775272-9bff54b04b69274e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/07/Machine-Learning-Week-4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Machine-Learning-Week-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/04/Machine-Learning-Week-3/">Machine Learning Week 3-Classification</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/04/Machine-Learning-Week-3/" class="archive-article-date">
-  	<time datetime="2017-11-03T16:00:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="17-11-07-MWhite’s-learning-notes"><a href="#17-11-07-MWhite’s-learning-notes" class="headerlink" title="17/11/07 MWhite’s learning notes"></a>17/11/07 MWhite’s learning notes</h6><h1 id="1-Classification"><a href="#1-Classification" class="headerlink" title="1. Classification"></a>1. Classification</h1><p>Linear Regression :y∈R<br>Classification(logistic regression) : y∈{0,1,…}</p>
-<h3 id="1-1-Hypothesis-Representation"><a href="#1-1-Hypothesis-Representation" class="headerlink" title="1.1 Hypothesis Representation"></a>1.1 Hypothesis Representation</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-884ba180c6cb119b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-b6fd8ba079d253c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="1-2-Logistic-regression’s-Cost-Function"><a href="#1-2-Logistic-regression’s-Cost-Function" class="headerlink" title="1.2 Logistic regression’s Cost Function"></a>1.2 Logistic regression’s Cost Function</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-91d69d6b6dae9d31.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Simplified Cost Function<br><img src="http://upload-images.jianshu.io/upload_images/3775272-e02e3d57ce1be0e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simplified Cost Function"><br><img src="http://upload-images.jianshu.io/upload_images/3775272-46cad3500ce3ac31.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="1-3-Logistic-regression’s-Gradient-Descent"><a href="#1-3-Logistic-regression’s-Gradient-Descent" class="headerlink" title="1.3 Logistic regression’s  Gradient Descent"></a>1.3 Logistic regression’s  Gradient Descent</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-976a92111c2f01cf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Vectorized implementation:<br><img src="http://upload-images.jianshu.io/upload_images/3775272-76bc7a7ac74003f7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="1-4-Advanced-Optimization"><a href="#1-4-Advanced-Optimization" class="headerlink" title="1.4 Advanced Optimization"></a>1.4 Advanced Optimization</h3><p>library function——fminunc()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function [jVal, gradient] = costFunction(theta)</div><div class="line">  jVal = [...code to compute J(theta)...];</div><div class="line">  gradient = [...code to compute derivative of J(theta)...];</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">options = optimset(&apos;GradObj&apos;, &apos;on&apos;, &apos;MaxIter&apos;, 100);</div><div class="line">initialTheta = zeros(2,1);</div><div class="line">   [optTheta, functionVal, exitFlag] = fminunc(@costFunction, initialTheta, options);</div></pre></td></tr></table></figure>
-<h1 id="2-Multiclass-Classification"><a href="#2-Multiclass-Classification" class="headerlink" title="2. Multiclass Classification"></a>2. Multiclass Classification</h1><p>One-vs-all<br><img src="http://upload-images.jianshu.io/upload_images/3775272-9d8a72eb9915a82a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-fdfc102518a6093a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="3-Overfitting"><a href="#3-Overfitting" class="headerlink" title="3. Overfitting"></a>3. Overfitting</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-4611b5d88d1f336d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-c3d17b32f0756497.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>skips θ0</strong></p>
-<h3 id="3-1-Regularized-Linear-Regression"><a href="#3-1-Regularized-Linear-Regression" class="headerlink" title="3.1 Regularized Linear Regression"></a>3.1 Regularized Linear Regression</h3><ul>
-<li>Cost Function<br><img src="http://upload-images.jianshu.io/upload_images/3775272-a0ff553a683aaed0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-<li>Gradient descent<br><img src="http://upload-images.jianshu.io/upload_images/3775272-d8195556f3a3a53d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-<li>Normal Equation<br><img src="http://upload-images.jianshu.io/upload_images/3775272-f52a901c8aea7cb2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><h3 id="3-2-Regularized-Logistic-Regression"><a href="#3-2-Regularized-Logistic-Regression" class="headerlink" title="3.2 Regularized Logistic Regression"></a>3.2 Regularized Logistic Regression</h3></li>
-<li>Cost Function<br><img src="http://upload-images.jianshu.io/upload_images/3775272-bb195853737d8eb1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-<li>Gradient descent<br><img src="http://upload-images.jianshu.io/upload_images/3775272-086e7c2d2f96b3f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/04/Machine-Learning-Week-3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -540,11 +610,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
