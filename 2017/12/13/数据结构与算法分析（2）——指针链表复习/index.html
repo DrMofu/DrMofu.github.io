@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://drmofu.github.io">
-  <title>64win下使用debug学习汇编语言 | M小白博客</title>
+  <title>数据结构与算法分析（2）——指针链表复习 | M小白博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用软件下载地址：汇编语言debug+DOSBox汇编语言PDF教程，王爽（著）  第零步：安装DOSBox0.74-win32-installer，并将MASM文件放在一个地方，比如F:（F盘根目录下） 第一步：运行DOSBox软件 第二步：输入mount c f:/   (这里是将我们的f盘挂在（mount）到DOSBox中虚拟的C盘，如果你将MASM放在了自己电脑C盘下的learn文件夹中，">
-<meta name="keywords" content="极客">
+  <meta name="description" content="M小白的学习笔记17/12/05 指针定义结构体1234struct node&amp;#123;int data;struct node *next;&amp;#125;; 使用结构体的方法   struct node Node;    typedef struct node Node以后直接用Node即可    在定义结构体的时候在最后分号前加一个“Node”1234struct node&amp;#123;int">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="64win下使用debug学习汇编语言">
-<meta property="og:url" content="https://drmofu.github.io/2017/11/30/64win下使用debug学习汇编语言/index.html">
+<meta property="og:title" content="数据结构与算法分析（2）——指针链表复习">
+<meta property="og:url" content="https://drmofu.github.io/2017/12/13/数据结构与算法分析（2）——指针链表复习/index.html">
 <meta property="og:site_name" content="M小白博客">
-<meta property="og:description" content="使用软件下载地址：汇编语言debug+DOSBox汇编语言PDF教程，王爽（著）  第零步：安装DOSBox0.74-win32-installer，并将MASM文件放在一个地方，比如F:（F盘根目录下） 第一步：运行DOSBox软件 第二步：输入mount c f:/   (这里是将我们的f盘挂在（mount）到DOSBox中虚拟的C盘，如果你将MASM放在了自己电脑C盘下的learn文件夹中，">
+<meta property="og:description" content="M小白的学习笔记17/12/05 指针定义结构体1234struct node&amp;#123;int data;struct node *next;&amp;#125;; 使用结构体的方法   struct node Node;    typedef struct node Node以后直接用Node即可    在定义结构体的时候在最后分号前加一个“Node”1234struct node&amp;#123;int">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-ab82bee95a8be23a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-11-30T02:06:29.856Z">
+<meta property="og:updated_time" content="2017-12-13T12:06:23.521Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="64win下使用debug学习汇编语言">
-<meta name="twitter:description" content="使用软件下载地址：汇编语言debug+DOSBox汇编语言PDF教程，王爽（著）  第零步：安装DOSBox0.74-win32-installer，并将MASM文件放在一个地方，比如F:（F盘根目录下） 第一步：运行DOSBox软件 第二步：输入mount c f:/   (这里是将我们的f盘挂在（mount）到DOSBox中虚拟的C盘，如果你将MASM放在了自己电脑C盘下的learn文件夹中，">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3775272-ab82bee95a8be23a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="数据结构与算法分析（2）——指针链表复习">
+<meta name="twitter:description" content="M小白的学习笔记17/12/05 指针定义结构体1234struct node&amp;#123;int data;struct node *next;&amp;#125;; 使用结构体的方法   struct node Node;    typedef struct node Node以后直接用Node即可    在定义结构体的时候在最后分号前加一个“Node”1234struct node&amp;#123;int">
   
     <link rel="alternative" href="/atom.xml" title="M小白博客" type="application/atom+xml">
   
@@ -169,36 +167,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-64win下使用debug学习汇编语言" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据结构与算法分析（2）——指针链表复习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      64win下使用debug学习汇编语言
+      数据结构与算法分析（2）——指针链表复习
     </h1>
   
 
         
-        <a href="/2017/11/30/64win下使用debug学习汇编语言/" class="archive-article-date">
-  	<time datetime="2017-11-30T02:06:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-30</time>
+        <a href="/2017/12/13/数据结构与算法分析（2）——指针链表复习/" class="archive-article-date">
+  	<time datetime="2017-12-13T12:06:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用软件下载地址：<br><a href="http://pan.baidu.com/s/1mikSWnY" target="_blank" rel="external">汇编语言debug+DOSBox</a><br><a href="http://pan.baidu.com/s/1hsMoKHu" target="_blank" rel="external">汇编语言PDF教程，王爽（著）</a></p>
+        <p>M小白的学习笔记<br>17/12/05</p>
+<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><p>定义结构体<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">struct node&#123;</div><div class="line">int data;</div><div class="line">struct node *next;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>使用结构体的方法</p>
 <ul>
-<li>第零步：安装DOSBox0.74-win32-installer，并将MASM文件放在一个地方，比如F:（F盘根目录下）</li>
-<li>第一步：运行DOSBox软件</li>
-<li>第二步：输入mount c f:/   (这里是将我们的f盘挂在（mount）到DOSBox中虚拟的C盘，如果你将MASM放在了自己电脑C盘下的learn文件夹中，可以输入 mount c f:/)</li>
-<li>第三部：输入c:  (移动到我们DOSBox中虚拟的C盘)</li>
-<li>第四步：cd MASM (移动到我们的MASM文件夹)</li>
-<li>第五步：debug  （运行debug执行文件，之后我们就可以用debug练习汇编语言了）<br><img src="http://upload-images.jianshu.io/upload_images/3775272-ab82bee95a8be23a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li><ol>
+<li>struct node Node;</li>
+</ol>
+</li>
+<li><ol>
+<li>typedef struct node Node<br>以后直接用Node即可</li>
+</ol>
+</li>
+<li><ol>
+<li>在定义结构体的时候在最后分号前加一个“Node”<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">struct node&#123;</div><div class="line">int data;</div><div class="line">struct node *next;</div><div class="line">&#125;Node;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
 </ul>
-
+<p>### </p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdlib.h&gt;</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">#ifndef NULL</div><div class="line">#define NULL    (0)</div><div class="line">#endif</div><div class="line"></div><div class="line">#define dEBUG   </div><div class="line">//***********************************</div><div class="line">typedef struct nODE</div><div class="line">&#123;</div><div class="line">    int data;</div><div class="line">    struct nODE *next;</div><div class="line">&#125; NODE;</div><div class="line"></div><div class="line">//**********************************</div><div class="line">static void delete_list (NODE *list)</div><div class="line">&#123;</div><div class="line">    NODE *ptr;</div><div class="line">    </div><div class="line">    while (list != NULL)</div><div class="line">    &#123;</div><div class="line">        ptr = list-&gt;next;</div><div class="line">        free (list);</div><div class="line">        list = ptr;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//***********************************</div><div class="line">static NODE *reverse (NODE *list)</div><div class="line">&#123;</div><div class="line">#ifdef dEBUG</div><div class="line">    NODE *ptr = list-&gt;next;</div><div class="line">    </div><div class="line">    // only one node</div><div class="line">    if (ptr == NULL)</div><div class="line">    &#123;</div><div class="line">        return (list);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    (reverse (list-&gt;next))-&gt;next = list;</div><div class="line">    </div><div class="line">    return (list);</div><div class="line">#else</div><div class="line">    NODE *tmp1 = NULL, *tmp2 = NULL;</div><div class="line">    </div><div class="line">    while (list != NULL)</div><div class="line">    &#123;</div><div class="line">        tmp2 = list-&gt;next;</div><div class="line">        </div><div class="line">        list-&gt;next = tmp1;</div><div class="line">        tmp1 = list;</div><div class="line">        list = tmp2;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return (tmp1);</div><div class="line">#endif</div><div class="line">&#125;</div><div class="line"></div><div class="line">//**********************************</div><div class="line">static NODE *create_list (int size)</div><div class="line">&#123;</div><div class="line">  NODE *list, *ptr, *tmp = NULL;</div><div class="line">  int i;</div><div class="line">  </div><div class="line">    list = (NODE *)malloc (sizeof (NODE));</div><div class="line">    </div><div class="line">    if (list == NULL)</div><div class="line">    &#123;</div><div class="line">        printf (&quot;malloc () faile\n&quot;);</div><div class="line">        return (NULL);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    for (i = 0; i &lt; size; i++)</div><div class="line">    &#123;</div><div class="line">        ptr = (NODE *)malloc (sizeof (NODE));</div><div class="line">        </div><div class="line">        if (ptr == NULL)</div><div class="line">        &#123;</div><div class="line">            printf (&quot;malloc () failed\n&quot;);</div><div class="line">            return (NULL);</div><div class="line">        &#125;</div><div class="line">        ptr-&gt;data = size - i;</div><div class="line">        ptr-&gt;next = tmp;</div><div class="line">        tmp = ptr;</div><div class="line">    &#125;</div><div class="line">    list-&gt;next = tmp;</div><div class="line">    while (tmp != NULL)</div><div class="line">    &#123;</div><div class="line">        printf (&quot;%d-&gt;&quot;, tmp-&gt;data);</div><div class="line">        tmp = tmp-&gt;next;</div><div class="line">    &#125;</div><div class="line">    printf (&quot;\n&quot;);</div><div class="line">    </div><div class="line">    return (list);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//**********************************</div><div class="line">int main ()</div><div class="line">&#123;</div><div class="line">    int i, size = 20;</div><div class="line">    NODE *list, *ptr, *pre, *tmp;</div><div class="line">    </div><div class="line">    list = create_list (size);</div><div class="line">    if (list == NULL)</div><div class="line">        exit (-1);</div><div class="line">    </div><div class="line">    for (i= 0; i &lt; 2; i++)</div><div class="line">    &#123;</div><div class="line">#ifdef dEBUG</div><div class="line">        tmp = list-&gt;next;</div><div class="line">        if (tmp == NULL)</div><div class="line">            exit (0);</div><div class="line">        //find the end of the list</div><div class="line">        tmp = tmp-&gt;next;</div><div class="line">        while (tmp != NULL)</div><div class="line">        &#123;</div><div class="line">          pre = tmp;</div><div class="line">            tmp = tmp-&gt;next;</div><div class="line">        &#125;</div><div class="line">        ptr = reverse (list-&gt;next);</div><div class="line">        ptr-&gt;next = NULL;</div><div class="line">        tmp = pre;</div><div class="line">        list-&gt;next = tmp;</div><div class="line">#else</div><div class="line">        tmp = reverse (list-&gt;next);</div><div class="line">        list-&gt;next = tmp;</div><div class="line">#endif</div><div class="line">    </div><div class="line">        while (tmp != NULL)</div><div class="line">        &#123;</div><div class="line">            printf (&quot;%d-&gt;&quot;, tmp-&gt;data);</div><div class="line">            tmp = tmp-&gt;next;</div><div class="line">        &#125;</div><div class="line">        printf (&quot;\n&quot;);</div><div class="line">    &#125;    </div><div class="line">    delete_list (list);</div><div class="line">    </div><div class="line">    exit (0);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
 
       
@@ -242,7 +250,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">极客</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
@@ -298,7 +306,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://drmofu.github.io/2017/11/30/64win下使用debug学习汇编语言/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://drmofu.github.io/2017/12/13/数据结构与算法分析（2）——指针链表复习/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -312,18 +320,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/13/Git学习笔记（进阶）——分支管理/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Git学习笔记（进阶）——分支管理
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/30/Java知识点大全/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java知识点大全</div>
+    <a href="/2017/12/13/数据结构与算法分析（1）——基础知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构与算法分析（1）——基础知识</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -350,7 +349,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#指针"><span class="toc-number">1.</span> <span class="toc-text">指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例"><span class="toc-number">2.</span> <span class="toc-text">实例</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -366,7 +365,7 @@
   
 
   
-  <div id="SOHUCS" sid="64win下使用debug学习汇编语言" ></div> 
+  <div id="SOHUCS" sid="数据结构与算法分析（2）——指针链表复习" ></div> 
 <script type="text/javascript"> 
 window.YiliaChangyanWrap = function() {
     var appid = "cytih0qqU"; 

@@ -164,203 +164,32 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Geek-Git中使用ssh" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Machine-Learning-Week-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/02/Geek-Git中使用ssh/">Git中使用SSH</a>
+      <a class="article-title" href="/2017/11/07/Machine-Learning-Week-4/">Machine Learning Week 4-Neural Networks</a>
     </h1>
   
 
         
-        <a href="/2017/11/02/Geek-Git中使用ssh/" class="archive-article-date">
-  	<time datetime="2017-11-02T10:22:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+        <a href="/2017/11/07/Machine-Learning-Week-4/" class="archive-article-date">
+  	<time datetime="2017-11-07T15:03:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>MWrite’s Note</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本教程记录如何用ssh建立连接，从而免去我们用git提交文件到github时每次都要输入用户验证。<br><strong>不建议不会git的同学看本教程</strong><br>SSH 为建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。</p>
-<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><p>关于ssh是什么，推荐看<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="external">SSH原理与运用（一）：远程登录</a><br>进入正题<br>创建一个github的库后，我们使用ssh的方式连接我们本地和github。<br><img src="http://upload-images.jianshu.io/upload_images/3775272-25d99fea19ba3812.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>假设我们本地已经有了要上交的文件。<br>先在本地</p>
-<ol>
-<li><p>初始化git</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure>
-</li>
-<li><p>添加连接<br>git remote add 一个代称 git@github.com:你的账户/库名词.git</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin git@github.com:MWhite/test.git</div></pre></td></tr></table></figure>
-</li>
-<li><p>SSH身份验证<br>首先，生成我们ssh的key</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;(你的邮箱)&quot;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>出现如下内容<br><img src="http://upload-images.jianshu.io/upload_images/3775272-6b14708b9666d3d3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>然后在自己的github页面找到自己的ssh keys页面<br><img src="http://upload-images.jianshu.io/upload_images/3775272-89e554891e3e72e3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>选择“New SSH key”,然后填写title和key<br>Title自己取一个名字就行<br><img src="http://upload-images.jianshu.io/upload_images/3775272-f85d4cb4815076ab.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>key写之前我们用ssh-keygen生成的公钥<br>还记得之前我们用ssh-keygen成功有后下面这一句话把<br><img src="http://upload-images.jianshu.io/upload_images/3775272-f7b35f48dd4ed8a5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>cd找到这个地方，cat查看id_rsa.pub文件，将其中的所有内容复制，放到github ssh页面的Key里面<br><img src="http://upload-images.jianshu.io/upload_images/3775272-5ec5bb480f0de581.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>之后就完事大吉了，我们可以在~/.ssh目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure></p>
-<p>查看是否连接成功，中途有一个Are you sure？直接Yes即可<br><img src="http://upload-images.jianshu.io/upload_images/3775272-7cbf3f8317641312.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>如果左后能出现你的用户名，（我的是DrMofu），那么恭喜你，验证成功了。</p>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ol>
-<li>已经有https的remote了，如何改成ssh的</li>
-</ol>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-7e9c8f0f73758933.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>源自网络，地址见参考2</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
-<li><a href="http://blog.csdn.net/bacteriumx/article/details/77543199。" target="_blank" rel="external">Git添加GitHub远程库免去账号密码验证</a></li>
-<li><a href="https://segmentfault.com/a/1190000002645623" target="_blank" rel="external">git-ssh 配置和使用</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/Geek-Git中使用ssh/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Geek-Host" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/02/Geek-Host/">极客——更改Host</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/02/Geek-Host/" class="archive-article-date">
-  	<time datetime="2017-11-02T09:23:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>MWrite’s Note</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>更爱电脑的Host可以让电脑看部分被“墙”掉的网站和视频。<br>个人测试，可上<strong>Facebook</strong>和看<strong>Coursera</strong>上视频。<br>Youtube 和 Twitter仍旧用不了<br>本教程<strong>非原创</strong>、来源自网络，源处不知。</p>
-<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><p>首先是win+s找到记事本，并用管理员身份打开，</p>
-<p><a href="http://jingyan.baidu.com/album/6f2f55a14059eeb5b93e6cab.html?picindex=1" target="_blank" rel="external"><img src="https://imgsa.baidu.com/exp/w=500/sign=ffd0f0c2464a20a4311e3cc7a0509847/342ac65c1038534347342ff19a13b07ecb808863.jpg" alt="Coursera无法观看课程解决方案"></a></p>
-<p>在记事本 页面使用ctrl+o打开hosts文件，路径是C:\Windows\System32\drivers\etc，右下角的选项改为“所有文件”，不然是找不到hosts文件的，</p>
-<p><a href="http://jingyan.baidu.com/album/6f2f55a14059eeb5b93e6cab.html?picindex=2" target="_blank" rel="external"><img src="https://imgsa.baidu.com/exp/w=500/sign=dcc000f6f4faaf5184e381bfbc5694ed/960a304e251f95cac3133a66c0177f3e6609527f.jpg" alt="Coursera无法观看课程解决方案"></a></p>
-<p>阅读上面的添加规则，然后如图所示输入如下内容：<br>52.84.246.90    d3c33hcgiwev3.cloudfront.net52.84.246.252    d3c33hcgiwev3.cloudfront.net52.84.246.144    d3c33hcgiwev3.cloudfront.net52.84.246.72    d3c33hcgiwev3.cloudfront.net52.84.246.106    d3c33hcgiwev3.cloudfront.net52.84.246.135    d3c33hcgiwev3.cloudfront.net52.84.246.114    d3c33hcgiwev3.cloudfront.net52.84.246.90    d3c33hcgiwev3.cloudfront.net52.84.246.227    d3c33hcgiwev3.cloudfront.net</p>
-<p>再次感谢大神百度用户@wintel886提供的IP</p>
-<p><a href="http://jingyan.baidu.com/album/6f2f55a14059eeb5b93e6cab.html?picindex=3" target="_blank" rel="external"><img src="https://imgsa.baidu.com/exp/w=500/sign=f54b74e73cfae6cd0cb4ab613fb20f9e/3812b31bb051f819e478969ad3b44aed2f73e785.jpg" alt="Coursera无法观看课程解决方案"></a></p>
-<p>win+R打开cmd,输入ipconfig/flushdns刷新一下dns。</p>
-<p><a href="http://jingyan.baidu.com/album/6f2f55a14059eeb5b93e6cab.html?picindex=4" target="_blank" rel="external"><img src="https://imgsa.baidu.com/exp/w=500/sign=db4f8e9382d4b31cf03c94bbb7d7276f/42166d224f4a20a4d781a91799529822730ed047.jpg" alt="Coursera无法观看课程解决方案"></a><br>然后就可以上facebook、coursera了~</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">极客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/Geek-Host/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Machine-Learning-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/01/Machine-Learning-2/">Machine Learning Week 2</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/01/Machine-Learning-2/" class="archive-article-date">
-  	<time datetime="2017-11-01T15:15:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="17-11-01-MWhite’s-learning-notes"><a href="#17-11-01-MWhite’s-learning-notes" class="headerlink" title="17/11/01 MWhite’s learning notes"></a>17/11/01 MWhite’s learning notes</h6><h1 id="Multiple-Features"><a href="#Multiple-Features" class="headerlink" title="Multiple Features"></a>Multiple Features</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-72767488ec3f7db8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-24a6507c7bf3b03c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-80243c0161b12c96.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="Gradient-Descent-for-Multiple-Variables"><a href="#Gradient-Descent-for-Multiple-Variables" class="headerlink" title="Gradient Descent for Multiple Variables"></a>Gradient Descent for Multiple Variables</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-7568eec00aca5b12.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h5 id="Skill"><a href="#Skill" class="headerlink" title="Skill"></a>Skill</h5><ul>
-<li><img src="http://upload-images.jianshu.io/upload_images/3775272-98f7c1ee085d0705.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Where μi is the average of all the values for feature (i) and si is the range of values (max - min), or si is the standard deviation.</li>
-<li>Choose  appropriate learning rate<br><img src="http://upload-images.jianshu.io/upload_images/3775272-68016bcfaee64494.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+        <h6 id="17-11-07-MWhite’s-learning-notes"><a href="#17-11-07-MWhite’s-learning-notes" class="headerlink" title="17/11/07 MWhite’s learning notes"></a>17/11/07 MWhite’s learning notes</h6><h1 id="1-Neural-Networks"><a href="#1-Neural-Networks" class="headerlink" title="1. Neural Networks"></a>1. Neural Networks</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-e7ce0cd6b6bb3f8c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-55d18c6995717b47.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-bf7d8939b01b26b3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-91f92152e6fdb5a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>vectorize<br><img src="http://upload-images.jianshu.io/upload_images/3775272-40330c5021aa4686.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-c4ae3953b1d64f82.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Notice that in this last step, between layer j and layer j+1, we are doing exactly the same thing as we did in logistic regression.<br><img src="http://upload-images.jianshu.io/upload_images/3775272-da504e7bc4416215.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><h1 id="2-Applications"><a href="#2-Applications" class="headerlink" title="2. Applications"></a>2. Applications</h1><img src="http://upload-images.jianshu.io/upload_images/3775272-af7a22920408ddbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>Multiclass Classification<br><img src="http://upload-images.jianshu.io/upload_images/3775272-9bff54b04b69274e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
 </ul>
-<h1 id="Normal-Equation"><a href="#Normal-Equation" class="headerlink" title="Normal Equation"></a>Normal Equation</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-16d52db3d036d9f6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-29248ea612682839.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
       
 
@@ -384,7 +213,203 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/01/Machine-Learning-2/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/11/07/Machine-Learning-Week-4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Machine-Learning-Week-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/04/Machine-Learning-Week-3/">Machine Learning Week 3-Classification</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/04/Machine-Learning-Week-3/" class="archive-article-date">
+  	<time datetime="2017-11-03T16:00:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="17-11-07-MWhite’s-learning-notes"><a href="#17-11-07-MWhite’s-learning-notes" class="headerlink" title="17/11/07 MWhite’s learning notes"></a>17/11/07 MWhite’s learning notes</h6><h1 id="1-Classification"><a href="#1-Classification" class="headerlink" title="1. Classification"></a>1. Classification</h1><p>Linear Regression :y∈R<br>Classification(logistic regression) : y∈{0,1,…}</p>
+<h3 id="1-1-Hypothesis-Representation"><a href="#1-1-Hypothesis-Representation" class="headerlink" title="1.1 Hypothesis Representation"></a>1.1 Hypothesis Representation</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-884ba180c6cb119b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-b6fd8ba079d253c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="1-2-Logistic-regression’s-Cost-Function"><a href="#1-2-Logistic-regression’s-Cost-Function" class="headerlink" title="1.2 Logistic regression’s Cost Function"></a>1.2 Logistic regression’s Cost Function</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-91d69d6b6dae9d31.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Simplified Cost Function<br><img src="http://upload-images.jianshu.io/upload_images/3775272-e02e3d57ce1be0e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simplified Cost Function"><br><img src="http://upload-images.jianshu.io/upload_images/3775272-46cad3500ce3ac31.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="1-3-Logistic-regression’s-Gradient-Descent"><a href="#1-3-Logistic-regression’s-Gradient-Descent" class="headerlink" title="1.3 Logistic regression’s  Gradient Descent"></a>1.3 Logistic regression’s  Gradient Descent</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-976a92111c2f01cf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Vectorized implementation:<br><img src="http://upload-images.jianshu.io/upload_images/3775272-76bc7a7ac74003f7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="1-4-Advanced-Optimization"><a href="#1-4-Advanced-Optimization" class="headerlink" title="1.4 Advanced Optimization"></a>1.4 Advanced Optimization</h3><p>library function——fminunc()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function [jVal, gradient] = costFunction(theta)</div><div class="line">  jVal = [...code to compute J(theta)...];</div><div class="line">  gradient = [...code to compute derivative of J(theta)...];</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">options = optimset(&apos;GradObj&apos;, &apos;on&apos;, &apos;MaxIter&apos;, 100);</div><div class="line">initialTheta = zeros(2,1);</div><div class="line">   [optTheta, functionVal, exitFlag] = fminunc(@costFunction, initialTheta, options);</div></pre></td></tr></table></figure>
+<h1 id="2-Multiclass-Classification"><a href="#2-Multiclass-Classification" class="headerlink" title="2. Multiclass Classification"></a>2. Multiclass Classification</h1><p>One-vs-all<br><img src="http://upload-images.jianshu.io/upload_images/3775272-9d8a72eb9915a82a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-fdfc102518a6093a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="3-Overfitting"><a href="#3-Overfitting" class="headerlink" title="3. Overfitting"></a>3. Overfitting</h1><p><img src="http://upload-images.jianshu.io/upload_images/3775272-4611b5d88d1f336d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-c3d17b32f0756497.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>skips θ0</strong></p>
+<h3 id="3-1-Regularized-Linear-Regression"><a href="#3-1-Regularized-Linear-Regression" class="headerlink" title="3.1 Regularized Linear Regression"></a>3.1 Regularized Linear Regression</h3><ul>
+<li>Cost Function<br><img src="http://upload-images.jianshu.io/upload_images/3775272-a0ff553a683aaed0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>Gradient descent<br><img src="http://upload-images.jianshu.io/upload_images/3775272-d8195556f3a3a53d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>Normal Equation<br><img src="http://upload-images.jianshu.io/upload_images/3775272-f52a901c8aea7cb2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><h3 id="3-2-Regularized-Logistic-Regression"><a href="#3-2-Regularized-Logistic-Regression" class="headerlink" title="3.2 Regularized Logistic Regression"></a>3.2 Regularized Logistic Regression</h3></li>
+<li>Cost Function<br><img src="http://upload-images.jianshu.io/upload_images/3775272-bb195853737d8eb1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>Gradient descent<br><img src="http://upload-images.jianshu.io/upload_images/3775272-086e7c2d2f96b3f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/04/Machine-Learning-Week-3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Octave-学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/02/Octave-学习笔记/">Octave 学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/02/Octave-学习笔记/" class="archive-article-date">
+  	<time datetime="2017-11-02T13:58:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Author：MWhite<br>Update time：17.11.02</p>
+<p>Octave与Matlab有相通之处<br>(基本没区别,通用。 17/11/03)<br><a href="https://drmofu.github.io/2017/11/01/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Matlab学习笔记</a><br>本笔记只会记录特殊和值得写下的案例</p>
+<h1 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h1><p>==是否等于<br>~=不等于<br>xor(甲,乙) 异或<br>% 注释符号<br>A.<em>B 二者规模相通，A与B的元素单纯相乘<br>A .^2 ;.点代表每一个元素<br>log() exp() abs() magic() eye() find() prod() sum() pinv() disp()<br><em>*很多函数都可以输入一个参数或者输入两个参数，第二个参数是1或2时，1代表row，2代表column</em></em><br>floor() % 去小数<br>ceil() %去小数，有小数取+1<br>v=v+ones(length(v),1) % v=v+1<br>a=a+ones(size(a,1),size(a,2))<br>(A’)’ %转置两次<br>max(矩阵) %求每一column的最大值<br>max(矩阵甲，矩阵乙) %选择大的<br>矩阵&lt;数值 %返回同样规格矩阵，成立的地方为1，不成立为0</p>
+<h1 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h1><p>a = 3 %赋值并显示a的值<br>a = 3; %用;后不显示a的值，只赋值<br>字符串用 ‘ ‘括起来<br>sprintf()函数类比C语言中的printf()函数<br>[a,b]=max(c) %如果右边可以赋予两个值的话，依次赋给a和b</p>
+<p>format long<br>format short<br>和Matlab类似，改变显示数字的精度</p>
+<h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><p>start:step:end<br>v =1:0.2:3 从1开始，3截止，每个数之间差0.2<br>C=2 x ones(2,3)<br>zeros()<br>rand(row,column)<br>rand(number) %方阵<br>randn(row,column) %高斯分布随机<br>eye(数字) identity matrix<br>size(矩阵)返回一个1 x 2的矩阵<br>size(矩阵,1或2)<br>length(向量)=size(矩阵,1)<br>变量（row;column）<br>变量（row; : ） %:代表全部<br>变量（[行数甲 行数乙]; :）<br>变量=[矩阵，矩阵] %横向串联 加不加，都可<br>变量=[矩阵；矩阵] %纵向并联 加不加，都可<br>矩阵变量(:) %转换成一个向量</p>
+<h1 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h1><ul>
+<li>pwd查看当前位置</li>
+<li>load 文件名.dat 载入 之后Octave将文件名视为变量名，文件中的数据视为这个变量的值</li>
+<li>who 查看当前所以数据</li>
+<li>whos 更精确的who</li>
+<li>clear 变量   去除记录中的某个变量</li>
+<li>变量甲=变量乙（start:end） 获取乙中数据给甲</li>
+<li><strong>save 文件名.mat 变量名</strong> 保存 mat dat都是保存数据的一直后缀</li>
+<li>save example.txt v -ascii</li>
+</ul>
+<h1 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h1><ul>
+<li>hist(矩阵，多少项)</li>
+<li>figure(1):plot(x矩阵,y函数中含有x,’r–’);%第三个变量可不加，显示线条样式</li>
+<li>xlabel() ylabel() title() legend()图例 imagesc(矩阵),colorbar,colormap grad;</li>
+<li>figure;</li>
+<li>figure() 指定窗口</li>
+<li>subplot()分割窗口、并指定布局</li>
+<li>axis([a,b,c,d])</li>
+<li>hold on; hold off</li>
+<li>clf</li>
+<li>close</li>
+<li>cd ‘C:\Users\name\Desktop’; print -dpng ‘图片名.png’ %保存</li>
+</ul>
+<h1 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">v=zeros(10,1)</div><div class="line">for i=1:10,</div><div class="line">  v(i)=2*i;</div><div class="line">end;</div></pre></td></tr></table></figure>
+<p>可以用for, while,if, elseif,  break;<br>不要用() 本行结束用,逗号 不要用;分号<br>最后结束用end;<br>quit exit退出编辑程序模式</p>
+<p>保存函数 文件名.m<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function [返回值1,返回值2] 函数名（输入变量）</div><div class="line">   处理+返回值=啥啥啥;</div></pre></td></tr></table></figure></p>
+<p><strong>处在有.m函数文件的目录下，可直接引用.m中的函数</strong><br>addpath(‘XXXX’)%添加路径，以后找函数也会从这里找</p>
+<h5 id="函数案例"><a href="#函数案例" class="headerlink" title="函数案例"></a>函数案例</h5><p><img src="http://upload-images.jianshu.io/upload_images/3775272-53e39b5c824b43dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="函数案例"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/02/Octave-学习笔记/">展开全文 >></a>
         </p>
       
 
@@ -416,7 +441,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 
@@ -511,11 +536,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -523,7 +552,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,6 +561,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">不一样的人生</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
