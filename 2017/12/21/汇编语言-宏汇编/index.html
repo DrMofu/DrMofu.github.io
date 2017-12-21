@@ -6,25 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://drmofu.github.io">
-  <title>Java GUI | M小白博客</title>
+  <title>汇编语言-宏汇编 | M小白博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Author：MWhiteUpdate time：17.10.31 AWT Swing组件组合界面  AWT进行事件响应和处理 AWT的布局管理器完成组件的布局  注意区分组件名称： AWT: Frame, Button, Panel, …  Swing: JFrame, Jbutton, Jpanel, …    12345678910111213案例import javax.swing.JFr">
-<meta name="keywords" content="学习笔记,Java">
+  <meta name="description" content="M小白 记录于2017/12/20  标识符字段  操作符字段 指令助记符  伪指令助记符   操作数字段 注释字段  1. 运算符 算术运算符数值表达式中可用所有运算地址表达式中只可用+ - 逻辑运算符and or 关系运算符关系满足则返回全1，否则返回全01234源文件中写MOV  AX, 0A2H NE02H编译后为MOV AX, 0FFFFH 分析运算符 SEG 取变量或标号所在段的段寄存">
+<meta name="keywords" content="汇编语言">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java GUI">
-<meta property="og:url" content="https://drmofu.github.io/2017/10/31/Java-GUI/index.html">
+<meta property="og:title" content="汇编语言-宏汇编">
+<meta property="og:url" content="https://drmofu.github.io/2017/12/21/汇编语言-宏汇编/index.html">
 <meta property="og:site_name" content="M小白博客">
-<meta property="og:description" content="Author：MWhiteUpdate time：17.10.31 AWT Swing组件组合界面  AWT进行事件响应和处理 AWT的布局管理器完成组件的布局  注意区分组件名称： AWT: Frame, Button, Panel, …  Swing: JFrame, Jbutton, Jpanel, …    12345678910111213案例import javax.swing.JFr">
+<meta property="og:description" content="M小白 记录于2017/12/20  标识符字段  操作符字段 指令助记符  伪指令助记符   操作数字段 注释字段  1. 运算符 算术运算符数值表达式中可用所有运算地址表达式中只可用+ - 逻辑运算符and or 关系运算符关系满足则返回全1，否则返回全01234源文件中写MOV  AX, 0A2H NE02H编译后为MOV AX, 0FFFFH 分析运算符 SEG 取变量或标号所在段的段寄存">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-1538af9995ea5738.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-733d4112e1b16955.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-2564d5397bea7a96.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-1e44b8e8444a3bed.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-11-01T09:30:34.563Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-fe4e40277e4bb0b1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-e329bdc36c4af50b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-e80d6c07c81f189f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-fd8b0f6dbdc42dde.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-858fd64e6b5ff19b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-67aa206736c7dd11.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3775272-f77c998366b3e66f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-21T02:30:18.645Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java GUI">
-<meta name="twitter:description" content="Author：MWhiteUpdate time：17.10.31 AWT Swing组件组合界面  AWT进行事件响应和处理 AWT的布局管理器完成组件的布局  注意区分组件名称： AWT: Frame, Button, Panel, …  Swing: JFrame, Jbutton, Jpanel, …    12345678910111213案例import javax.swing.JFr">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3775272-1538af9995ea5738.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="汇编语言-宏汇编">
+<meta name="twitter:description" content="M小白 记录于2017/12/20  标识符字段  操作符字段 指令助记符  伪指令助记符   操作数字段 注释字段  1. 运算符 算术运算符数值表达式中可用所有运算地址表达式中只可用+ - 逻辑运算符and or 关系运算符关系满足则返回全1，否则返回全01234源文件中写MOV  AX, 0A2H NE02H编译后为MOV AX, 0FFFFH 分析运算符 SEG 取变量或标号所在段的段寄存">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3775272-fe4e40277e4bb0b1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="M小白博客" type="application/atom+xml">
   
@@ -172,81 +175,80 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java-GUI" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-汇编语言-宏汇编" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java GUI
+      汇编语言-宏汇编
     </h1>
   
 
         
-        <a href="/2017/10/31/Java-GUI/" class="archive-article-date">
-  	<time datetime="2017-10-31T08:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
+        <a href="/2017/12/21/汇编语言-宏汇编/" class="archive-article-date">
+  	<time datetime="2017-12-21T02:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Author：MWhite<br>Update time：17.10.31</p>
-<h2 id="AWT"><a href="#AWT" class="headerlink" title="AWT"></a>AWT</h2><ul>
-<li>Swing组件组合界面 </li>
-<li>AWT进行事件响应和处理</li>
-<li>AWT的布局管理器完成组件的布局</li>
-</ul>
-<h5 id="注意区分组件名称："><a href="#注意区分组件名称：" class="headerlink" title="注意区分组件名称："></a>注意区分组件名称：</h5><ul>
-<li>AWT: Frame, Button, Panel, … </li>
-<li>Swing: JFrame, Jbutton, Jpanel, … </li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-1538af9995ea5738.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="AWT+SWING" title="AWT+SWING"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">案例</div><div class="line">import javax.swing.JFrame; </div><div class="line">public class Simple2 &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        JFrame frame = new JFrame(“Hello World &quot;);   </div><div class="line">        frame.setSize(300, 200);   </div><div class="line">        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); </div><div class="line">        JPanel panel = new JPanel(); //</div><div class="line">        panel.setBackground(Color.red);</div><div class="line">        frame.setContentPane(panel);   </div><div class="line">        frame.setVisible(true);  </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><ul>
-<li><h5 id="顶层组件"><a href="#顶层组件" class="headerlink" title="顶层组件"></a>顶层组件</h5>包括 JFrame、JDialog、Japplet、 JWindow<br>JFrame是大多数应用程序的基本窗口，有边框、标题和按钮，允许程序员把其他组件添 加到它里面，把它们组织起来，并把它们呈现给用户。 </li>
-<li><h5 id="中间组件-二级容器"><a href="#中间组件-二级容器" class="headerlink" title="中间组件 - 二级容器"></a>中间组件 - 二级容器</h5><p>必须放在顶层容器内，且能够容纳其他控件<br>包括JPanel、JScrollPane、JToolBar、JSplitPane、JTabbedPane </p>
-<blockquote>
+        <p>M小白 记录于2017/12/20</p>
 <ul>
-<li>JPanel：常规面板</li>
-<li>JScrollPane：滚动面板，即带有长宽滚动条，主要用来容纳大型控件</li>
-<li>JToolBar：工具栏面板，包含图标按钮</li>
-<li>JSplitPane：分割式面板</li>
-<li>JTabbedPane：选项卡面板</li>
-</ul>
-</blockquote>
-</li>
-<li><h5 id="基本组件"><a href="#基本组件" class="headerlink" title="基本组件"></a>基本组件</h5><blockquote>
-<ul>
-<li><strong>按钮</strong>：JButton（常规按钮）、JCheckBox（复选框）、JRadioButton（单选按钮）。 </li>
-<li><strong>文本组件</strong>：JTextField（文本字段）、JPasswoordField（密码框）、JTextArea（纯文本）。 <ul>
-<li><strong>不可编辑显示组件</strong>：JLabel（显示不可编辑文本）、JToolTip（显示不可编辑文本）、 JProgreesBar（进度条）。 </li>
+<li>标识符字段 </li>
+<li>操作符字段<ul>
+<li>指令助记符 </li>
+<li>伪指令助记符</li>
 </ul>
 </li>
-<li><strong>菜单</strong>：JMenu（普通菜单）、JPopupMenu（弹出式菜单）。 </li>
-<li><strong>其他组件</strong>：JFileChooser（文件选择器）、JColorChooser（颜色选择器）、JTable（表 格）、JTree（树）、JComboBox（下拉框）等等。</li>
+<li>操作数字段</li>
+<li>注释字段</li>
 </ul>
-</blockquote>
-</li>
+<h3 id="1-运算符"><a href="#1-运算符" class="headerlink" title="1. 运算符"></a>1. 运算符</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-fe4e40277e4bb0b1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h5><p>数值表达式中可用所有运算<br>地址表达式中只可用+ -</p>
+<h5 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h5><p>and or</p>
+<h5 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h5><p>关系满足则返回全1，否则返回全0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">源文件中写</div><div class="line">MOV  AX, 0A2H NE02H</div><div class="line">编译后为</div><div class="line">MOV AX, 0FFFFH</div></pre></td></tr></table></figure></p>
+<h5 id="分析运算符"><a href="#分析运算符" class="headerlink" title="分析运算符"></a>分析运算符</h5><ul>
+<li>SEG 取变量或标号所在段的段寄存器值作为<strong>段基址</strong>，结果为16位值</li>
+<li>OFFSET 取变量或标号的<strong>段内偏移量</strong>，结果为16位值</li>
+<li>TYPE 取变量或标号的<strong>类型</strong></li>
+<li>LENGTH 取<strong>DUP重复次数</strong></li>
+<li>SIZE 取分配给变量的<strong>字节个数</strong><br><img src="http://upload-images.jianshu.io/upload_images/3775272-e329bdc36c4af50b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
 </ul>
-<hr>
-<h2 id="布局器"><a href="#布局器" class="headerlink" title="布局器"></a>布局器</h2><p><img src="http://upload-images.jianshu.io/upload_images/3775272-733d4112e1b16955.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="布局器机制"></p>
-<blockquote>
+<h5 id="合成运算符"><a href="#合成运算符" class="headerlink" title="合成运算符"></a>合成运算符</h5><p>合成运算符修改已定义的单个操作数，重 新生成段基址、偏移量相同而类型不同的 新操作数。</p>
 <ul>
-<li><strong>Flow layout</strong> 横向浮动</li>
-<li><strong>Box layout</strong> 纵向浮动</li>
-<li><strong>Border layout</strong> 东南西北中五个方位</li>
-<li><strong>Grid layout</strong> 几行几列</li>
-<li><strong>组合嵌套</strong> 前几个嵌套</li>
+<li>PTR 新操作数的类型为表达式中指定的“新类型”,</li>
+<li>THIS 新操作数的段基址和偏移量为汇编过程中遇到THIS运算符时的当前值</li>
+<li>LABEL<br>Name  LABEL Type<br>变量类型（ BYTE /WORD /DWORD） 标号类型（FAR /NEAR）</li>
 </ul>
-</blockquote>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://upload-images.jianshu.io/upload_images/3775272-2564d5397bea7a96.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="组合嵌套"></h2><h2 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h2><p><img src="http://upload-images.jianshu.io/upload_images/3775272-1e44b8e8444a3bed.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="交互"></p>
-<h6 id="鼠标交互MouseListener-接口"><a href="#鼠标交互MouseListener-接口" class="headerlink" title="鼠标交互MouseListener 接口"></a>鼠标交互MouseListener 接口</h6><blockquote>
-<p>void mousePressed(MouseEvent evt);<br>void mouseReleased(MouseEvent evt);<br>void mouseClicked(MouseEvent evt);<br>void mouseEntered(MouseEvent evt);<br>void mouseExited(MouseEvent evt);</p>
-</blockquote>
-<p>source.addMouseListener(mListener); </p>
+<h3 id="2-常用伪指令"><a href="#2-常用伪指令" class="headerlink" title="2. 常用伪指令"></a>2. 常用伪指令</h3><h5 id="数据定义伪指令"><a href="#数据定义伪指令" class="headerlink" title="数据定义伪指令"></a>数据定义伪指令</h5><ul>
+<li>EQU</li>
+<li>=</li>
+<li>$ 地址计数器(符号“$”表 示当前偏移地址值) 比如$+4</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-e80d6c07c81f189f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-fd8b0f6dbdc42dde.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>DB—— 变量为字节数据类型（8位） </li>
+<li>DW—— 变量为字数据类型（16位） </li>
+<li>DD —— 变量为双字数据类型（32位） </li>
+<li>DQ —— 变量为4字数据类型（64位） </li>
+<li>DT —— 变量为10字节数据类型（80位）</li>
+</ul>
+<h5 id="程序结构伪指令"><a href="#程序结构伪指令" class="headerlink" title="程序结构伪指令"></a>程序结构伪指令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">段名 SEGMENT  [ 定位选择 ]  [ 链接类型 ]  [‘类别标识符’]</div><div class="line"> ……</div><div class="line">段名 ENDS</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-858fd64e6b5ff19b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-67aa206736c7dd11.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="段说明伪指令ASSUME"><a href="#段说明伪指令ASSUME" class="headerlink" title="段说明伪指令ASSUME"></a>段说明伪指令ASSUME</h5><p>ASSUME DS:DATA，SS:STACK，CS:CODE</p>
+<h5 id="过程定义伪指令"><a href="#过程定义伪指令" class="headerlink" title="过程定义伪指令"></a>过程定义伪指令</h5><p><img src="http://upload-images.jianshu.io/upload_images/3775272-f77c998366b3e66f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="段内定位语句ORG"><a href="#段内定位语句ORG" class="headerlink" title="段内定位语句ORG"></a>段内定位语句ORG</h5><p>ORG语句之后段内所有的数据或代码均以 表达式或常量的值为起始偏移量连续存放， 除非遇到另一个ORG语句。</p>
+<h3 id="宏汇编语言基本语法"><a href="#宏汇编语言基本语法" class="headerlink" title="宏汇编语言基本语法"></a>宏汇编语言基本语法</h3><h5 id="1-方式选择伪指令"><a href="#1-方式选择伪指令" class="headerlink" title="1.方式选择伪指令"></a>1.方式选择伪指令</h5><p>.8086<br>通常, 方式伪指令放在程序的头部, 作为源程序的 第1条语句.</p>
+<h5 id="2-段定义语句"><a href="#2-段定义语句" class="headerlink" title="2.段定义语句"></a>2.段定义语句</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Segment_name segment [定位类型][链接参数][‘分类名’][段长度]</div><div class="line"> ….</div><div class="line">Segment_name ends</div></pre></td></tr></table></figure>
+<p>ASSUME  段寄存器：段名，ꞏꞏꞏ，段寄存器：段名</p>
+<ul>
+<li>通常ASSUME作为代码段的第一条指令. </li>
+<li>ASSUME语句仅约定了对某个逻辑段进行寻址操 作时使用哪个段寄存器,而段寄存器的初值必在程序中用 指令设置.<br>SS可赋值,也可不 赋值.</li>
+</ul>
 
       
 
@@ -291,11 +293,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">汇编语言</a>
         		</li>
       		
 		</ul>
@@ -351,7 +349,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://drmofu.github.io/2017/10/31/Java-GUI/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://drmofu.github.io/2017/12/21/汇编语言-宏汇编/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -365,18 +363,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/31/Neural-Network-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Neural Network(1) logistic regression
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/31/Neural-Networks-2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Neural Networks(2) descent&amp;computation Graph</div>
+    <a href="/2017/12/13/数据结构与算法分析（2）——指针链表复习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构与算法分析（2）——指针链表复习</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -403,7 +392,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#AWT"><span class="toc-number">1.</span> <span class="toc-text">AWT</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#注意区分组件名称："><span class="toc-number">1.0.0.1.</span> <span class="toc-text">注意区分组件名称：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件"><span class="toc-number">2.</span> <span class="toc-text">组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#顶层组件"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">顶层组件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#中间组件-二级容器"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">中间组件 - 二级容器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#基本组件"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">基本组件</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#布局器"><span class="toc-number">3.</span> <span class="toc-text">布局器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">4.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#交互"><span class="toc-number">5.</span> <span class="toc-text">交互</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#鼠标交互MouseListener-接口"><span class="toc-number">5.0.0.0.1.</span> <span class="toc-text">鼠标交互MouseListener 接口</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-运算符"><span class="toc-number">1.</span> <span class="toc-text">1. 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#算术运算符"><span class="toc-number">1.0.1.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#逻辑运算符"><span class="toc-number">1.0.2.</span> <span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#关系运算符"><span class="toc-number">1.0.3.</span> <span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分析运算符"><span class="toc-number">1.0.4.</span> <span class="toc-text">分析运算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#合成运算符"><span class="toc-number">1.0.5.</span> <span class="toc-text">合成运算符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-常用伪指令"><span class="toc-number">2.</span> <span class="toc-text">2. 常用伪指令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#数据定义伪指令"><span class="toc-number">2.0.1.</span> <span class="toc-text">数据定义伪指令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#程序结构伪指令"><span class="toc-number">2.0.2.</span> <span class="toc-text">程序结构伪指令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#段说明伪指令ASSUME"><span class="toc-number">2.0.3.</span> <span class="toc-text">段说明伪指令ASSUME</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#过程定义伪指令"><span class="toc-number">2.0.4.</span> <span class="toc-text">过程定义伪指令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#段内定位语句ORG"><span class="toc-number">2.0.5.</span> <span class="toc-text">段内定位语句ORG</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#宏汇编语言基本语法"><span class="toc-number">3.</span> <span class="toc-text">宏汇编语言基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-方式选择伪指令"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.方式选择伪指令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-段定义语句"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.段定义语句</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -419,7 +408,7 @@
   
 
   
-  <div id="SOHUCS" sid="Java-GUI" ></div> 
+  <div id="SOHUCS" sid="汇编语言-宏汇编" ></div> 
 <script type="text/javascript"> 
 window.YiliaChangyanWrap = function() {
     var appid = "cytih0qqU"; 

@@ -164,6 +164,109 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Machine-Learning-Week-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/09/Machine-Learning-Week-5/">Machine Learning Week 5-Neural Networks(2)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/09/Machine-Learning-Week-5/" class="archive-article-date">
+  	<time datetime="2017-11-09T15:27:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="17-11-09-MWhite’s-learning-notes"><a href="#17-11-09-MWhite’s-learning-notes" class="headerlink" title="17/11/09 MWhite’s learning notes"></a>17/11/09 MWhite’s learning notes</h6><h1 id="1-Neural-Networks-Theta"><a href="#1-Neural-Networks-Theta" class="headerlink" title="1. Neural Networks-Theta"></a>1. Neural Networks-Theta</h1><h3 id="1-1-Cost-Function"><a href="#1-1-Cost-Function" class="headerlink" title="1.1 Cost Function"></a>1.1 Cost Function</h3><ul>
+<li>L = total number of layers in the network</li>
+<li>sl = number of units (not counting bias unit) in layer l</li>
+<li>K = number of output units/classes<br><img src="http://upload-images.jianshu.io/upload_images/3775272-4f95126c582d9f13.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<p>The number of columns in our current theta matrix is equal to the number of nodes in our current layer (including the bias unit). The number of rows in our current theta matrix is equal to the number of nodes in the next layer (excluding the bias unit).</p>
+<h3 id="1-2-Backpropagation-Algorithm"><a href="#1-2-Backpropagation-Algorithm" class="headerlink" title="1.2 Backpropagation Algorithm"></a>1.2 Backpropagation Algorithm</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-b919dbc2bfee0027.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Computer δ：<br><img src="http://upload-images.jianshu.io/upload_images/3775272-0818f32c8e9aa99a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-3704e4c591040574.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>We want to minimize the cost function, so we need to figure out the partial derivative, and that is：<br><img src="http://upload-images.jianshu.io/upload_images/3775272-6f3dddeab5c0d1e5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="2-Skills"><a href="#2-Skills" class="headerlink" title="2. Skills"></a>2. Skills</h1><h3 id="2-1-Unrolling-Parameters"><a href="#2-1-Unrolling-Parameters" class="headerlink" title="2.1 Unrolling Parameters"></a>2.1 Unrolling Parameters</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-dc98feb487155af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">thetaVector = [ Theta1(:); Theta2(:); Theta3(:); ]</div><div class="line">deltaVector = [ D1(:); D2(:); D3(:) ]</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Theta1 = reshape(thetaVector(1:110),10,11)</div><div class="line">Theta2 = reshape(thetaVector(111:220),10,11)</div><div class="line">Theta3 = reshape(thetaVector(221:231),1,11)</div></pre></td></tr></table></figure>
+<h3 id="2-2-Gradient-Checking"><a href="#2-2-Gradient-Checking" class="headerlink" title="2.2 Gradient Checking"></a>2.2 Gradient Checking</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-3098ddca9ca16c8b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-f4039b2320ed2036.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">epsilon = 1e-4;</div><div class="line">for i = 1:n,</div><div class="line">  thetaPlus = theta;</div><div class="line">  thetaPlus(i) += epsilon;</div><div class="line">  thetaMinus = theta;</div><div class="line">  thetaMinus(i) -= epsilon;</div><div class="line">  gradApprox(i) = (J(thetaPlus) - J(thetaMinus))/(2*epsilon)</div><div class="line">end;</div></pre></td></tr></table></figure></p>
+<p>Once you have verified once that your backpropagation algorithm is correct, you don’t need to compute gradApprox again. The code to compute gradApprox can be very slow.</p>
+<h3 id="2-3-Random-Initialization"><a href="#2-3-Random-Initialization" class="headerlink" title="2.3 Random Initialization"></a>2.3 Random Initialization</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-5a57a0beb19c9de1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">If the dimensions of Theta1 is 10x11, Theta2 is 10x11 and Theta3 is 1x11.</div><div class="line"></div><div class="line">Theta1 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;</div><div class="line">Theta2 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;</div><div class="line">Theta3 = rand(1,11) * (2 * INIT_EPSILON) - INIT_EPSILON;</div></pre></td></tr></table></figure>
+<h1 id="summary"><a href="#summary" class="headerlink" title="summary"></a>summary</h1><ul>
+<li>Number of input units = dimension of features x(i)</li>
+<li>Number of output units = number of classes</li>
+<li>Number of hidden units per layer = usually more the better (must balance with cost of computation as it increases with more hidden units)</li>
+<li>Defaults: 1 hidden layer. If you have more than 1 hidden layer, then it is recommended that you have the same number of units in every hidden layer.<h3 id="Training-a-Neural-Network"><a href="#Training-a-Neural-Network" class="headerlink" title="Training a Neural Network"></a>Training a Neural Network</h3></li>
+</ul>
+<ol>
+<li>Randomly initialize the weights<br><strong>for i=1:m</strong></li>
+<li>Implement forward propagation to get hΘ(x(i)) for any x(i)</li>
+<li>Implement the cost function</li>
+<li>Implement backpropagation to compute partial derivatives<br><strong>end;</strong></li>
+<li>Use gradient checking to confirm that your backpropagation works. Then disable gradient checking.</li>
+<li>Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta.<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for i = 1:m,</div><div class="line">   Perform forward propagation and backpropagation using example (x(i),y(i))</div><div class="line">   (Get activations a(l) and delta terms d(l) for l = 2,...,L</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-c25f27a7282452a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AI</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/09/Machine-Learning-Week-5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Machine-Learning-Week-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -332,113 +435,6 @@
 
 
   
-    <article id="post-Octave-学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/02/Octave-学习笔记/">Octave 学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/02/Octave-学习笔记/" class="archive-article-date">
-  	<time datetime="2017-11-02T13:58:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Author：MWhite<br>Update time：17.11.02</p>
-<p>Octave与Matlab有相通之处<br>(基本没区别,通用。 17/11/03)<br><a href="https://drmofu.github.io/2017/11/01/Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Matlab学习笔记</a><br>本笔记只会记录特殊和值得写下的案例</p>
-<h1 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h1><p>==是否等于<br>~=不等于<br>xor(甲,乙) 异或<br>% 注释符号<br>A.<em>B 二者规模相通，A与B的元素单纯相乘<br>A .^2 ;.点代表每一个元素<br>log() exp() abs() magic() eye() find() prod() sum() pinv() disp()<br><em>*很多函数都可以输入一个参数或者输入两个参数，第二个参数是1或2时，1代表row，2代表column</em></em><br>floor() % 去小数<br>ceil() %去小数，有小数取+1<br>v=v+ones(length(v),1) % v=v+1<br>a=a+ones(size(a,1),size(a,2))<br>(A’)’ %转置两次<br>max(矩阵) %求每一column的最大值<br>max(矩阵甲，矩阵乙) %选择大的<br>矩阵&lt;数值 %返回同样规格矩阵，成立的地方为1，不成立为0</p>
-<h1 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h1><p>a = 3 %赋值并显示a的值<br>a = 3; %用;后不显示a的值，只赋值<br>字符串用 ‘ ‘括起来<br>sprintf()函数类比C语言中的printf()函数<br>[a,b]=max(c) %如果右边可以赋予两个值的话，依次赋给a和b</p>
-<p>format long<br>format short<br>和Matlab类似，改变显示数字的精度</p>
-<h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><p>start:step:end<br>v =1:0.2:3 从1开始，3截止，每个数之间差0.2<br>C=2 x ones(2,3)<br>zeros()<br>rand(row,column)<br>rand(number) %方阵<br>randn(row,column) %高斯分布随机<br>eye(数字) identity matrix<br>size(矩阵)返回一个1 x 2的矩阵<br>size(矩阵,1或2)<br>length(向量)=size(矩阵,1)<br>变量（row;column）<br>变量（row; : ） %:代表全部<br>变量（[行数甲 行数乙]; :）<br>变量=[矩阵，矩阵] %横向串联 加不加，都可<br>变量=[矩阵；矩阵] %纵向并联 加不加，都可<br>矩阵变量(:) %转换成一个向量</p>
-<h1 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h1><ul>
-<li>pwd查看当前位置</li>
-<li>load 文件名.dat 载入 之后Octave将文件名视为变量名，文件中的数据视为这个变量的值</li>
-<li>who 查看当前所以数据</li>
-<li>whos 更精确的who</li>
-<li>clear 变量   去除记录中的某个变量</li>
-<li>变量甲=变量乙（start:end） 获取乙中数据给甲</li>
-<li><strong>save 文件名.mat 变量名</strong> 保存 mat dat都是保存数据的一直后缀</li>
-<li>save example.txt v -ascii</li>
-</ul>
-<h1 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h1><ul>
-<li>hist(矩阵，多少项)</li>
-<li>figure(1):plot(x矩阵,y函数中含有x,’r–’);%第三个变量可不加，显示线条样式</li>
-<li>xlabel() ylabel() title() legend()图例 imagesc(矩阵),colorbar,colormap grad;</li>
-<li>figure;</li>
-<li>figure() 指定窗口</li>
-<li>subplot()分割窗口、并指定布局</li>
-<li>axis([a,b,c,d])</li>
-<li>hold on; hold off</li>
-<li>clf</li>
-<li>close</li>
-<li>cd ‘C:\Users\name\Desktop’; print -dpng ‘图片名.png’ %保存</li>
-</ul>
-<h1 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">v=zeros(10,1)</div><div class="line">for i=1:10,</div><div class="line">  v(i)=2*i;</div><div class="line">end;</div></pre></td></tr></table></figure>
-<p>可以用for, while,if, elseif,  break;<br>不要用() 本行结束用,逗号 不要用;分号<br>最后结束用end;<br>quit exit退出编辑程序模式</p>
-<p>保存函数 文件名.m<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function [返回值1,返回值2] 函数名（输入变量）</div><div class="line">   处理+返回值=啥啥啥;</div></pre></td></tr></table></figure></p>
-<p><strong>处在有.m函数文件的目录下，可直接引用.m中的函数</strong><br>addpath(‘XXXX’)%添加路径，以后找函数也会从这里找</p>
-<h5 id="函数案例"><a href="#函数案例" class="headerlink" title="函数案例"></a>函数案例</h5><p><img src="http://upload-images.jianshu.io/upload_images/3775272-53e39b5c824b43dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="函数案例"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/02/Octave-学习笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -536,6 +532,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
@@ -544,7 +544,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+                <a href="javascript:void(0)" class="js-tag color3">极客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,15 +552,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">不一样的人生</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">极客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">不一样的人生</a>
+                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
               </li>
              
               <li class="article-tag-list-item">

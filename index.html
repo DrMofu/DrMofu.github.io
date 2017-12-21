@@ -164,6 +164,133 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-汇编语言-宏汇编" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/21/汇编语言-宏汇编/">汇编语言-宏汇编</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/21/汇编语言-宏汇编/" class="archive-article-date">
+  	<time datetime="2017-12-21T02:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>M小白 记录于2017/12/20</p>
+<ul>
+<li>标识符字段 </li>
+<li>操作符字段<ul>
+<li>指令助记符 </li>
+<li>伪指令助记符</li>
+</ul>
+</li>
+<li>操作数字段</li>
+<li>注释字段</li>
+</ul>
+<h3 id="1-运算符"><a href="#1-运算符" class="headerlink" title="1. 运算符"></a>1. 运算符</h3><p><img src="http://upload-images.jianshu.io/upload_images/3775272-fe4e40277e4bb0b1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h5><p>数值表达式中可用所有运算<br>地址表达式中只可用+ -</p>
+<h5 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h5><p>and or</p>
+<h5 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h5><p>关系满足则返回全1，否则返回全0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">源文件中写</div><div class="line">MOV  AX, 0A2H NE02H</div><div class="line">编译后为</div><div class="line">MOV AX, 0FFFFH</div></pre></td></tr></table></figure></p>
+<h5 id="分析运算符"><a href="#分析运算符" class="headerlink" title="分析运算符"></a>分析运算符</h5><ul>
+<li>SEG 取变量或标号所在段的段寄存器值作为<strong>段基址</strong>，结果为16位值</li>
+<li>OFFSET 取变量或标号的<strong>段内偏移量</strong>，结果为16位值</li>
+<li>TYPE 取变量或标号的<strong>类型</strong></li>
+<li>LENGTH 取<strong>DUP重复次数</strong></li>
+<li>SIZE 取分配给变量的<strong>字节个数</strong><br><img src="http://upload-images.jianshu.io/upload_images/3775272-e329bdc36c4af50b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<h5 id="合成运算符"><a href="#合成运算符" class="headerlink" title="合成运算符"></a>合成运算符</h5><p>合成运算符修改已定义的单个操作数，重 新生成段基址、偏移量相同而类型不同的 新操作数。</p>
+<ul>
+<li>PTR 新操作数的类型为表达式中指定的“新类型”,</li>
+<li>THIS 新操作数的段基址和偏移量为汇编过程中遇到THIS运算符时的当前值</li>
+<li>LABEL<br>Name  LABEL Type<br>变量类型（ BYTE /WORD /DWORD） 标号类型（FAR /NEAR）</li>
+</ul>
+<h3 id="2-常用伪指令"><a href="#2-常用伪指令" class="headerlink" title="2. 常用伪指令"></a>2. 常用伪指令</h3><h5 id="数据定义伪指令"><a href="#数据定义伪指令" class="headerlink" title="数据定义伪指令"></a>数据定义伪指令</h5><ul>
+<li>EQU</li>
+<li>=</li>
+<li>$ 地址计数器(符号“$”表 示当前偏移地址值) 比如$+4</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-e80d6c07c81f189f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3775272-fd8b0f6dbdc42dde.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>DB—— 变量为字节数据类型（8位） </li>
+<li>DW—— 变量为字数据类型（16位） </li>
+<li>DD —— 变量为双字数据类型（32位） </li>
+<li>DQ —— 变量为4字数据类型（64位） </li>
+<li>DT —— 变量为10字节数据类型（80位）</li>
+</ul>
+<h5 id="程序结构伪指令"><a href="#程序结构伪指令" class="headerlink" title="程序结构伪指令"></a>程序结构伪指令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">段名 SEGMENT  [ 定位选择 ]  [ 链接类型 ]  [‘类别标识符’]</div><div class="line"> ……</div><div class="line">段名 ENDS</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-858fd64e6b5ff19b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3775272-67aa206736c7dd11.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="段说明伪指令ASSUME"><a href="#段说明伪指令ASSUME" class="headerlink" title="段说明伪指令ASSUME"></a>段说明伪指令ASSUME</h5><p>ASSUME DS:DATA，SS:STACK，CS:CODE</p>
+<h5 id="过程定义伪指令"><a href="#过程定义伪指令" class="headerlink" title="过程定义伪指令"></a>过程定义伪指令</h5><p><img src="http://upload-images.jianshu.io/upload_images/3775272-f77c998366b3e66f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="段内定位语句ORG"><a href="#段内定位语句ORG" class="headerlink" title="段内定位语句ORG"></a>段内定位语句ORG</h5><p>ORG语句之后段内所有的数据或代码均以 表达式或常量的值为起始偏移量连续存放， 除非遇到另一个ORG语句。</p>
+<h3 id="宏汇编语言基本语法"><a href="#宏汇编语言基本语法" class="headerlink" title="宏汇编语言基本语法"></a>宏汇编语言基本语法</h3><h5 id="1-方式选择伪指令"><a href="#1-方式选择伪指令" class="headerlink" title="1.方式选择伪指令"></a>1.方式选择伪指令</h5><p>.8086<br>通常, 方式伪指令放在程序的头部, 作为源程序的 第1条语句.</p>
+<h5 id="2-段定义语句"><a href="#2-段定义语句" class="headerlink" title="2.段定义语句"></a>2.段定义语句</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Segment_name segment [定位类型][链接参数][‘分类名’][段长度]</div><div class="line"> ….</div><div class="line">Segment_name ends</div></pre></td></tr></table></figure>
+<p>ASSUME  段寄存器：段名，ꞏꞏꞏ，段寄存器：段名</p>
+<ul>
+<li>通常ASSUME作为代码段的第一条指令. </li>
+<li>ASSUME语句仅约定了对某个逻辑段进行寻址操 作时使用哪个段寄存器,而段寄存器的初值必在程序中用 指令设置.<br>SS可赋值,也可不 赋值.</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">汇编语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/21/汇编语言-宏汇编/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数据结构与算法分析（2）——指针链表复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -202,7 +329,6 @@
 </ol>
 </li>
 </ul>
-<p>### </p>
 <h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdlib.h&gt;</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line"></div><div class="line">#ifndef NULL</div><div class="line">#define NULL    (0)</div><div class="line">#endif</div><div class="line"></div><div class="line">#define dEBUG   </div><div class="line">//***********************************</div><div class="line">typedef struct nODE</div><div class="line">&#123;</div><div class="line">    int data;</div><div class="line">    struct nODE *next;</div><div class="line">&#125; NODE;</div><div class="line"></div><div class="line">//**********************************</div><div class="line">static void delete_list (NODE *list)</div><div class="line">&#123;</div><div class="line">    NODE *ptr;</div><div class="line">    </div><div class="line">    while (list != NULL)</div><div class="line">    &#123;</div><div class="line">        ptr = list-&gt;next;</div><div class="line">        free (list);</div><div class="line">        list = ptr;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//***********************************</div><div class="line">static NODE *reverse (NODE *list)</div><div class="line">&#123;</div><div class="line">#ifdef dEBUG</div><div class="line">    NODE *ptr = list-&gt;next;</div><div class="line">    </div><div class="line">    // only one node</div><div class="line">    if (ptr == NULL)</div><div class="line">    &#123;</div><div class="line">        return (list);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    (reverse (list-&gt;next))-&gt;next = list;</div><div class="line">    </div><div class="line">    return (list);</div><div class="line">#else</div><div class="line">    NODE *tmp1 = NULL, *tmp2 = NULL;</div><div class="line">    </div><div class="line">    while (list != NULL)</div><div class="line">    &#123;</div><div class="line">        tmp2 = list-&gt;next;</div><div class="line">        </div><div class="line">        list-&gt;next = tmp1;</div><div class="line">        tmp1 = list;</div><div class="line">        list = tmp2;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return (tmp1);</div><div class="line">#endif</div><div class="line">&#125;</div><div class="line"></div><div class="line">//**********************************</div><div class="line">static NODE *create_list (int size)</div><div class="line">&#123;</div><div class="line">  NODE *list, *ptr, *tmp = NULL;</div><div class="line">  int i;</div><div class="line">  </div><div class="line">    list = (NODE *)malloc (sizeof (NODE));</div><div class="line">    </div><div class="line">    if (list == NULL)</div><div class="line">    &#123;</div><div class="line">        printf (&quot;malloc () faile\n&quot;);</div><div class="line">        return (NULL);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    for (i = 0; i &lt; size; i++)</div><div class="line">    &#123;</div><div class="line">        ptr = (NODE *)malloc (sizeof (NODE));</div><div class="line">        </div><div class="line">        if (ptr == NULL)</div><div class="line">        &#123;</div><div class="line">            printf (&quot;malloc () failed\n&quot;);</div><div class="line">            return (NULL);</div><div class="line">        &#125;</div><div class="line">        ptr-&gt;data = size - i;</div><div class="line">        ptr-&gt;next = tmp;</div><div class="line">        tmp = ptr;</div><div class="line">    &#125;</div><div class="line">    list-&gt;next = tmp;</div><div class="line">    while (tmp != NULL)</div><div class="line">    &#123;</div><div class="line">        printf (&quot;%d-&gt;&quot;, tmp-&gt;data);</div><div class="line">        tmp = tmp-&gt;next;</div><div class="line">    &#125;</div><div class="line">    printf (&quot;\n&quot;);</div><div class="line">    </div><div class="line">    return (list);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//**********************************</div><div class="line">int main ()</div><div class="line">&#123;</div><div class="line">    int i, size = 20;</div><div class="line">    NODE *list, *ptr, *pre, *tmp;</div><div class="line">    </div><div class="line">    list = create_list (size);</div><div class="line">    if (list == NULL)</div><div class="line">        exit (-1);</div><div class="line">    </div><div class="line">    for (i= 0; i &lt; 2; i++)</div><div class="line">    &#123;</div><div class="line">#ifdef dEBUG</div><div class="line">        tmp = list-&gt;next;</div><div class="line">        if (tmp == NULL)</div><div class="line">            exit (0);</div><div class="line">        //find the end of the list</div><div class="line">        tmp = tmp-&gt;next;</div><div class="line">        while (tmp != NULL)</div><div class="line">        &#123;</div><div class="line">          pre = tmp;</div><div class="line">            tmp = tmp-&gt;next;</div><div class="line">        &#125;</div><div class="line">        ptr = reverse (list-&gt;next);</div><div class="line">        ptr-&gt;next = NULL;</div><div class="line">        tmp = pre;</div><div class="line">        list-&gt;next = tmp;</div><div class="line">#else</div><div class="line">        tmp = reverse (list-&gt;next);</div><div class="line">        list-&gt;next = tmp;</div><div class="line">#endif</div><div class="line">    </div><div class="line">        while (tmp != NULL)</div><div class="line">        &#123;</div><div class="line">            printf (&quot;%d-&gt;&quot;, tmp-&gt;data);</div><div class="line">            tmp = tmp-&gt;next;</div><div class="line">        &#125;</div><div class="line">        printf (&quot;\n&quot;);</div><div class="line">    &#125;    </div><div class="line">    delete_list (list);</div><div class="line">    </div><div class="line">    exit (0);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
 
@@ -346,99 +472,6 @@
 
 
   
-    <article id="post-Git学习笔记（进阶）——分支管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/13/Git学习笔记（进阶）——分支管理/">Git学习笔记（进阶）——分支管理</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/13/Git学习笔记（进阶）——分支管理/" class="archive-article-date">
-  	<time datetime="2017-12-13T12:02:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000" target="_blank" rel="external">廖雪峰git</a><br><a href="https://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6" target="_blank" rel="external">Git-分支-分支的新建与合并</a></p>
-<h3 id="创建分支-amp-转换分支"><a href="#创建分支-amp-转换分支" class="headerlink" title="创建分支&amp;转换分支"></a>创建分支&amp;转换分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b newbranch</div></pre></td></tr></table></figure>
-<p>等同于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git branch newbranch</div><div class="line">$ git checkout newbranch</div></pre></td></tr></table></figure></p>
-<p>git checkout xxx转换分支<br>git branch xxx创建分支<br>git branch命令查看当前分支</p>
-<h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git checkout master</div><div class="line">$ git merge hotfix</div><div class="line">移动到主分支，把主分支合并到新写的hotfix中</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-cde12c6288c6e81d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><br><img src="http://upload-images.jianshu.io/upload_images/3775272-b4045c514d589751.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
-<h3 id="遇到冲突时的分支合并"><a href="#遇到冲突时的分支合并" class="headerlink" title="遇到冲突时的分支合并"></a>遇到冲突时的分支合并</h3><p>Git 会在有冲突的文件里加入标准的冲突解决标记，可以通过它们来手工定位并解决这些冲突。可以看到此文件包含类似下面这样的部分：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</div><div class="line">&lt;div id=&quot;footer&quot;&gt;contact : email.support@github.com&lt;/div&gt;</div><div class="line">=======</div><div class="line">&lt;div id=&quot;footer&quot;&gt;</div><div class="line">  please contact us at support@github.com</div><div class="line">&lt;/div&gt;</div><div class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; iss53</div></pre></td></tr></table></figure></p>
-<p>手动选择保留什么<br>git add将把它们标记为已解决状态<br>git commit提交</p>
-<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch -d hotfix //想象成删除指针</div></pre></td></tr></table></figure>
-<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><p>git remote或者git remote -v显示更详细的信息<br>推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git push origin master</div><div class="line">$ git push origin dev</div></pre></td></tr></table></figure></p>
-<ul>
-<li>master分支是主分支，因此要时刻与远程同步；</li>
-<li>dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；</li>
-<li>bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；</li>
-<li>feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。</li>
-</ul>
-<p>现在，你的小伙伴要在dev分支上开发，就必须创建远程origin的dev分支到本地，于是他用这个命令创建本地dev分支：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git clone git@github.com:michaelliao/learngit.git</div><div class="line">git checkout -b dev origin/dev</div><div class="line">……</div><div class="line">git push origin dev</div></pre></td></tr></table></figure></p>
-<h3 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h3><h5 id="临时储存工作区"><a href="#临时储存工作区" class="headerlink" title="临时储存工作区"></a>临时储存工作区</h5><p> git stash可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作<br>工作现场还在，Git把stash内容存在某个地方了git stash list，但是需要恢复一下，有两个办法：<br>一是用git stash apply stash@{0}恢复，但是恢复后，stash内容并不删除，你需要用git stash drop stash@{0}来删除；<br>另一种方式是用git stash pop，恢复的同时把stash内容也删了：</p>
-<h5 id="修改master上bug的流程"><a href="#修改master上bug的流程" class="headerlink" title="修改master上bug的流程"></a>修改master上bug的流程</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git checkout master</div><div class="line">git checkout -b issue-101</div><div class="line">git add xxx</div><div class="line">git commit -m &quot;fix bug 101&quot;</div><div class="line">git checkout master</div><div class="line">git merge --no-ff -m &quot;merged bug fix 101&quot; issue-101</div><div class="line">git branch -d issue-101</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/3775272-263c2d6c40c484ca?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="git-br-policy"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/13/Git学习笔记（进阶）——分支管理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -536,6 +569,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
@@ -544,7 +581,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AI</a>
+                <a href="javascript:void(0)" class="js-tag color3">极客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,15 +589,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">不一样的人生</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">极客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">不一样的人生</a>
+                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
               </li>
              
               <li class="article-tag-list-item">
